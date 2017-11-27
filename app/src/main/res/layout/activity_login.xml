@@ -66,16 +66,16 @@
                 android:id="@+id/email_sign_in_button"
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="124dp"
-                android:layout_height="50dp"
+                android:layout_height="46dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="monospace"
                 android:text="Enter"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="192dp"
-                tools:layout_editor_absoluteY="132dp"
-                tools:ignore="MissingConstraints" />
+                tools:layout_editor_absoluteY="136dp" />
 
             <Button
                 android:id="@+id/sign_in_cancel_button"
