@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="baseballRecruitment.jd.RegistrationActivity">
+
+    <TextView
+        android:id="@+id/register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.468" />
+
+    <EditText
+        android:id="@+id/name_response"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+    <EditText
+        android:id="@+id/email_response"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <EditText
+        android:id="@+id/password_response"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Confirm Password"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="282dp" />
+
+    <EditText
+        android:id="@+id/org_response"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Organization"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <EditText
+        android:id="@+id/username_response"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Username"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <Button
+        android:id="@+id/register_cancel_button"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Cancel"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <Button
+        android:id="@+id/register_enter_button"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Enter"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+</android.support.constraint.ConstraintLayout>
