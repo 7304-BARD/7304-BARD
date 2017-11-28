@@ -8,10 +8,13 @@ public class Player {
     @PrimaryKey(autoGenerate=true)
     public int pid;
 
-    public Player(String name, int year, short positions) {
+    boolean watchlist;
+
+    public Player(String name, int year, short positions, boolean watchlist) {
         this.name = name;
         this.year = year;
         this.positions = positions;
+        this.watchlist = watchlist;
     }
 
     public int year;

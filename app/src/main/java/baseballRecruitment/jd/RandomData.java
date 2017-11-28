@@ -2,6 +2,7 @@ package baseballRecruitment.jd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 public abstract class RandomData {
@@ -17,7 +18,7 @@ public abstract class RandomData {
     }
 
     public static Player randomPlayer() {
-        return new Player(randomName(), randomInt(2050, 2110), (short) randomInt(0, 1024));
+        return new Player(randomName(), randomInt(2050, 2110), (short) randomInt(0, 1024), true);
     }
 
     public static ArrayList<Player> randomPlayers(int count) {
@@ -36,7 +37,7 @@ public abstract class RandomData {
         return m;
     }
 
-    public static ArrayList<HashMap<String, String>> playerMaps(ArrayList<Player> ps) {
+    public static ArrayList<HashMap<String, String>> playerMaps(List<Player> ps) {
         ArrayList<HashMap<String, String>> pms = new ArrayList<HashMap<String, String>>(ps.size());
         for (int i = 0; i < ps.size(); i++)
             pms.add(mapForPlayer(ps.get(i)));
@@ -59,7 +60,7 @@ public abstract class RandomData {
         return list;
     }
 
-    public static ArrayList<ArrayList<HashMap<String, String>>> detailedPlayerMaps(ArrayList<Player> ps)
+    public static ArrayList<ArrayList<HashMap<String, String>>> detailedPlayerMaps(List<Player> ps)
     {
         ArrayList<ArrayList<HashMap<String, String>>> list = new ArrayList<ArrayList<HashMap<String, String>>>(ps.size());
         for (int i = 0; i < ps.size(); i++)
