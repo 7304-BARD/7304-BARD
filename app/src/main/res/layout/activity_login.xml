@@ -65,19 +65,4 @@
                 tools:layout_editor_absoluteX="192dp"
                 tools:layout_editor_absoluteY="132dp" />
 
-            <Button
-                android:id="@+id/sign_in_cancel_button"
-                style="@android:style/Widget.Button.Inset"
-                android:layout_width="124dp"
-                android:layout_height="50dp"
-                android:background="@android:color/holo_blue_dark"
-                android:fontFamily="monospace"
-                android:text="Cancel"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="30dp"
-                tools:layout_editor_absoluteY="132dp"
-                tools:ignore="MissingConstraints" />
-
-        </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

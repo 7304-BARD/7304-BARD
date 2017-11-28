@@ -18,6 +18,6 @@ public class WelcomeScreen extends AppCompatActivity {
     }
 
     void register(View view) {
-        startActivity(new Intent(this, RegistrationActivity.class));
+        startActivity(new Intent(this, Registration.class));
     }
 }
