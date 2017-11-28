@@ -17,9 +17,9 @@ public class Registration extends AppCompatActivity {
 
     public void register(View view) {
         // TODO Encapsulate later
-        final String email = ((TextView) findViewById(R.id.email)).getText().toString();
-        final String username = ((TextView) findViewById(R.id.email)).getText().toString();
-        final String password = ((TextView) findViewById(R.id.password)).getText().toString();
+        final String email = ((TextView) findViewById(R.id.email_response)).getText().toString();
+        final String username = ((TextView) findViewById(R.id.username_response)).getText().toString();
+        final String password = ((TextView) findViewById(R.id.password_response)).getText().toString();
         final String password_confirm = ((TextView) findViewById(R.id.confirm_password)).getText().toString();
         final String organization = ((TextView) findViewById(R.id.org_response)).getText().toString();
 
