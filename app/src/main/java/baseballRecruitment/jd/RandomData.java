@@ -54,9 +54,9 @@ public abstract class RandomData {
     private static ArrayList<HashMap<String, String>> playerDetails(Player p) {
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(4);
         list.add(detailMap("rank", "" + randomInt(1, 200)));
-        list.add(detailMap("AVG", "" + random.nextFloat()));
+        list.add(detailMap("batting average", "" + random.nextFloat()));
         list.add(detailMap("team", "Ocean City Mustang Ranchers"));
-        list.add(detailMap("batting average", "" + randomInt(0, 41)));
+        list.add(detailMap("uniform number", "" + randomInt(0, 41)));
         return list;
     }
 
