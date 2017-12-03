@@ -21,6 +21,8 @@ public class MockLoginManager implements ILoginManager {
                 Room.databaseBuilder(context, AccountsDatabase.class, "accounts")
                         .allowMainThreadQueries().build();
         Account[] accounts = db.userDao().lookupAccount(username, password);
+        if (accounts.length < 1)
+          accounts = db.userDao().lookupAccountEmail(username, password);
 
         return accounts.length > 0;
     }
