@@ -100,7 +100,7 @@ public class NewMeeting extends AppCompatActivity {
         @Override
         public void onTimeSet(TimePicker timePicker, int hour, int minute) {
             cal.set(Calendar.HOUR, hour);
-            cal.set(Calendar.HOUR, minute);
+            cal.set(Calendar.MINUTE, minute);
             displayTime(et, cal);
         }
     }
