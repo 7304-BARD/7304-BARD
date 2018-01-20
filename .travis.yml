@@ -1,6 +1,8 @@
 language: android
 sudo: false
 
+if: not tag =~ ^autobuild
+
 android:
   components:
     - tools
