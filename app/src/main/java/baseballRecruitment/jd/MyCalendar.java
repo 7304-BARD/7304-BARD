@@ -13,7 +13,7 @@ public class MyCalendar extends AppCompatActivity {
         setContentView(R.layout.activity_my_calendar);
     }
 
-    void new_meeting(View view) {
+    public void new_meeting(View view) {
         startActivityForResult(new Intent(this, NewMeeting.class), 0);
     }
 
