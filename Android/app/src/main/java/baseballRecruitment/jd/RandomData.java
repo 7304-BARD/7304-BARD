@@ -44,7 +44,7 @@ public abstract class RandomData {
         return pms;
     }
 
-    private static HashMap<String, String> detailMap(String label, String value) {
+    public static HashMap<String, String> detailMap(String label, String value) {
         HashMap<String, String> map = new HashMap<String, String>(2);
         map.put("label", label);
         map.put("value", value);

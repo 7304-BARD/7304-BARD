@@ -2,6 +2,7 @@ package baseballRecruitment.jd.DataLayer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -9,8 +10,21 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.jsoup.select.Selector;
 
+import baseballRecruitment.jd.RandomData;
+
 public class JPGS {
-  private static class Player {
+
+  public static class Pair<K, V> {
+    public final K first;
+    public final V second;
+
+    public Pair(K k, V v) {
+      first = k;
+      second = v;
+    }
+  }
+
+  public static class Player {
     String id;
     String name;
     String year;
@@ -46,6 +60,33 @@ public class JPGS {
       Element e = Selector.selectFirst(sel, html);
       return e == null ? "<N/A>" : e.text();
     }
+
+    public HashMap<String, String> map() {
+        HashMap<String, String> m = new HashMap<String, String>(3);
+        m.put("name", name);
+        m.put("year", "" + year);
+        m.put("positions", pos);
+        return m;
+    }
+
+    private static void addIf(ArrayList<HashMap<String, String>> list, String k, String v) {
+        if (v != null)
+          list.add(RandomData.detailMap(k, v));
+    }
+
+    public ArrayList<HashMap<String, String>> detailMap() {
+        ArrayList<HashMap<String, String>> details = new ArrayList<>(9);
+        addIf(details, "other positions", pos2);
+        addIf(details, "age", age);
+        addIf(details, "height", height);
+        addIf(details, "weight", weight);
+        addIf(details, "bats/throws", bt);
+        addIf(details, "high school", hs);
+        addIf(details, "home town", town);
+        addIf(details, "summer team", team_summer);
+        addIf(details, "fall team", team_fall);
+        return details;
+    }
   }
 
   private static Document get_pg(String resource) throws IOException {
@@ -56,7 +97,7 @@ public class JPGS {
     return get_pg("Players/Playerprofile.aspx?ID=" + id);
   }
 
-  private static ArrayList<String> get_top50(String year) throws IOException {
+  public static ArrayList<String> get_top50(String year) throws IOException {
     Elements t50 = Selector.select("a[href~=Playerprofile.aspx]", get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year));
     ArrayList<String> al = new ArrayList<String>(t50.size());
     for (Element e : t50) {
@@ -64,6 +105,18 @@ public class JPGS {
       al.add(href.substring(href.lastIndexOf('=') + 1));
     }
     return al;
+  }
+
+  public static Pair<ArrayList<HashMap<String, String>>, ArrayList<ArrayList<HashMap<String, String>>>> get_top50_mapped(String year) {
+      Pair<ArrayList<HashMap<String, String>>, ArrayList<ArrayList<HashMap<String, String>>>> rv = new Pair(new ArrayList(), new ArrayList());
+      try {
+          Player [] players = get_top50_players(year);
+          for (Player p : players) {
+              rv.first.add(p.map());
+              rv.second.add(p.detailMap());
+          }
+      } catch (IOException e) {}
+      return rv;
   }
 
   private static Player [] get_top50_players(String year) throws IOException {
