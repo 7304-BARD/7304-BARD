@@ -32,7 +32,7 @@ public class Watchlist extends AppCompatActivity {
         updateWL();
     }
 
-    void newplayer(View view) {
+    public void newplayer(View view) {
         db.userDao().insertPlayers(RandomData.randomPlayer());
         updateWL();
     }

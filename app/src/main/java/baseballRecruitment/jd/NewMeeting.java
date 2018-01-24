@@ -46,7 +46,7 @@ public class NewMeeting extends AppCompatActivity {
         });
     }
 
-    void submit(View view) {
+    public void submit(View view) {
         Intent result = new Intent();
         result.putExtra("date", date);
         result.putExtra("start", start);

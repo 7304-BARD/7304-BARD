@@ -13,11 +13,11 @@ public class WelcomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_screen);
     }
 
-    void login(View view) {
+    public void login(View view) {
         startActivity(new Intent(this, Login.class));
     }
 
-    void register(View view) {
+    public void register(View view) {
         startActivity(new Intent(this, Registration.class));
     }
 }
