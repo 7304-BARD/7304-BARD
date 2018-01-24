@@ -11,7 +11,7 @@ android:
     - build-tools-26.0.2
     - android-26
 
-script: "./gradlew build"
+script: "(cd Android && ./gradlew build)"
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -33,8 +33,8 @@ deploy:
   api_key:
     secure: gICwqaz+kiN4xwDkk5gehgLXRPc6InwPYPB8A9pSk7SxJUPkQj4R774HI05eMpmGXFK2V+A1fc3ZAPd1VwEc36Ri8jN1bj0RFi3MzJp0bVl/z/hIIA4PG9W3YsiUciqa7pcUgXHIFZkGUQomwveDIGU8f43VST+ZLl0ZCYEvGsII7o37XIFhX172qN266JBQMoZAsAjFFsadl32o6GFyj60020g+dzgXVzBBxrkpUNLQqz7xoyh1Zq421P83bbhrn1WpXTBuHOHbETqZh9nSwxOnb3lwSIk+M7PW94SL0V/tLzBGpSswFHOEHeOIlc16Gnh6uS8WTcT8aDnd91Gs737R97wggHtho/kEoOsav8oMrXib4ah7U6qLcuC1Jdd3iZhrM1nhKCEMtaJIEfHCkxehVb22IBCnX19hTrYwEXyW5FffDd2yQ3u0NHyWZpG/8gfqvxi//6/4qdeTFvTsuxRgWGh3qsPIT7ch7kdYIfVUAlPXsbGOWQKjJcKcIHH6LxjuZAhXmwh7xKtZnkp1xFH+mtsCmjjQDHMQaVkCgfdOw+AERzphFE+UrZaD457Oy5FIv5ncdaZUY3Tf5zLuPqCnIkqCFQuJHKe2ootXXEggkK6MA2l9YjqbzQI9zj1BJw14N/L4hNX6BhxEtBSxyz6mxnEsQ9diDB23z1uNxAs=
   file:
-    - "app/build/outputs/apk/debug/app-debug.apk"
-    - "app/build/outputs/apk/release/app-release-unsigned.apk"
+    - "Android/app/build/outputs/apk/debug/app-debug.apk"
+    - "Android/app/build/outputs/apk/release/app-release-unsigned.apk"
   skip_cleanup: true
   on:
     repo: gtny152/7304-BARD
