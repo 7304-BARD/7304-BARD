@@ -18,6 +18,7 @@
         <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +31,8 @@
         <activity android:name=".MyCalendar" />
         <activity android:name=".Planner" />
         <activity android:name=".NewMeeting" />
-        <activity android:name=".Watchlist"></activity>
+        <activity android:name=".Watchlist" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

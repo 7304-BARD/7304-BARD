@@ -1,6 +1,7 @@
 package baseballRecruitment.jd;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,8 +34,9 @@ public class Watchlist extends AppCompatActivity {
     }
 
     public void newplayer(View view) {
-        db.userDao().insertPlayers(RandomData.randomPlayer());
-        updateWL();
+        startActivityForResult(new Intent(this, SearchActivity.class), 0);
+        //db.userDao().insertPlayers(RandomData.randomPlayer());
+        //updateWL();
     }
 
     void updateWL() {
