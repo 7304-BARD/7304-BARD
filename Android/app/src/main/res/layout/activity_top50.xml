@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context="baseballRecruitment.jd.Top50_">
 
+    <ProgressBar
+        android:id="@+id/pbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
     <TextView
         android:id="@+id/top_50_title"
         android:layout_width="wrap_content"

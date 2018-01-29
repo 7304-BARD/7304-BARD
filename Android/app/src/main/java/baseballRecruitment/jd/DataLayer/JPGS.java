@@ -17,7 +17,7 @@ import baseballRecruitment.jd.RandomData;
 public class JPGS {
 
   public static class Player {
-    String id;
+    public String id;
     String name;
     String year;
     String pos;
@@ -46,6 +46,13 @@ public class JPGS {
       town = select("#ContentPlaceHolder1_Bio1_lblHomeTown", html);
       team_summer = select("#ContentPlaceHolder1_Bio1_lblSummerTeam", html);
       team_fall = select("#ContentPlaceHolder1_Bio1_lblFallTeam", html);
+    }
+
+    public Player(String id, String name, String pos, String year) {
+      this.id = id;
+      this.name = name;
+      this.pos = pos;
+      this.year = year;
     }
 
     private String select(String sel, Document html) {
@@ -89,38 +96,40 @@ public class JPGS {
     return get_pg("Players/Playerprofile.aspx?ID=" + id);
   }
 
-  public static ArrayList<String> get_top50(String year) throws IOException {
-    Elements t50 = Selector.select("a[href~=Playerprofile.aspx]", get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year));
-    ArrayList<String> al = new ArrayList<String>(t50.size());
-    for (Element e : t50) {
-      String href = e.attr("href");
-      al.add(href.substring(href.lastIndexOf('=') + 1));
+  public static ArrayList<Player> get_top50(String year) throws IOException {
+    Document t50 = get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year);
+    Elements rows = Selector.select("tr:has(a[href~=Playerprofile.aspx])", t50);
+    ArrayList<Player> al = new ArrayList<Player>(rows.size());
+    for (Element r : rows) {
+      Element nameId = r.child(1).child(0);
+      String href = nameId.attr("href");
+      String id = href.substring(href.lastIndexOf('=') + 1);
+      al.add(new Player(id, nameId.text(), r.child(2).text(), year));
     }
     return al;
   }
 
-  public static Pair<ArrayList<HashMap<String, String>>, ArrayList<ArrayList<HashMap<String, String>>>> get_top50_mapped(String year) {
-      Pair<ArrayList<HashMap<String, String>>, ArrayList<ArrayList<HashMap<String, String>>>> rv = new Pair(new ArrayList(), new ArrayList());
-      try {
-          Player [] players = get_top50_players(year);
-          for (Player p : players) {
-              rv.first.add(p.map());
-              rv.second.add(p.detailMap());
-          }
-      } catch (IOException e) {}
-      return rv;
+  public static Pair<ArrayList<Player>, ArrayList<HashMap<String, String>>> get_top50_basic(String year) {
+    ArrayList<HashMap<String, String>> rv = new ArrayList(50);
+    ArrayList<Player> players = new ArrayList<Player>(0);
+    try {
+      players = get_top50(year);
+      for (Player p : players)
+        rv.add(p.map());
+    } catch (IOException e) {}
+    return new Pair(players, rv);
   }
 
-  private static Player [] get_top50_players(String year) throws IOException {
-    final ArrayList<String> ids = get_top50(year);
+  public static ArrayList<Player> getPlayers(final ArrayList<Player> ids) throws IOException {
     ArrayList<Thread> ts = new ArrayList<Thread>(ids.size());
-    final Player [] ps = new Player [ids.size()];
+    final ArrayList<Player> ps = new ArrayList<Player>(ids.size());
     for (int i = 0; i < ids.size(); i++) {
       final int e = i;
+      ps.add(null);
       Thread t = new Thread(new Runnable() {
         public void run() {
           try {
-            ps[e] = new Player(ids.get(e));
+            ps.set(e, new Player(ids.get(e).id));
           }
           catch (IOException e) {}
         }
