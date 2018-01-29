@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  BaseballRecruitment
+//  Baseball Recruitment
 //
-//  Created by Sergey Scott Nall  on 1/24/18.
+//  Created by Sergey Scott Nall  on 1/28/18.
 //  Copyright © 2018 Team Bard. All rights reserved.
 //
 

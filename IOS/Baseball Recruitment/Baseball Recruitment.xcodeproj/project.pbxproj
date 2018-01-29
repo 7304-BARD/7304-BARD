@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
+		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
+		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
+		43A64FD6201ED13700F33BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD5201ED13700F33BD2 /* Assets.xcassets */; };
+		43A64FD9201ED13700F33BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */; };
+		43A64FE4201ED13800F33BD2 /* Baseball_RecruitmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43A64FE0201ED13800F33BD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43A64FC3201ED13700F33BD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43A64FCA201ED13700F33BD2;
+			remoteInfo = "Baseball Recruitment";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		43A64FD3201ED13700F33BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43A64FD5201ED13700F33BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43A64FD8201ED13700F33BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43A64FDA201ED13700F33BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A64FDF201ED13800F33BD2 /* Baseball RecruitmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Baseball RecruitmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baseball_RecruitmentTests.swift; sourceTree = "<group>"; };
+		43A64FE5201ED13800F33BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43A64FC8201ED13700F33BD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43A64FDC201ED13800F33BD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43A64FC2201ED13700F33BD2 = {
+			isa = PBXGroup;
+			children = (
+				43A64FCD201ED13700F33BD2 /* Baseball Recruitment */,
+				43A64FE2201ED13800F33BD2 /* Baseball RecruitmentTests */,
+				43A64FCC201ED13700F33BD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43A64FCC201ED13700F33BD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */,
+				43A64FDF201ED13800F33BD2 /* Baseball RecruitmentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43A64FCD201ED13700F33BD2 /* Baseball Recruitment */ = {
+			isa = PBXGroup;
+			children = (
+				43A64FCE201ED13700F33BD2 /* AppDelegate.swift */,
+				43A64FD0201ED13700F33BD2 /* LoginViewController.swift */,
+				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
+				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
+				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
+				43A64FDA201ED13700F33BD2 /* Info.plist */,
+			);
+			path = "Baseball Recruitment";
+			sourceTree = "<group>";
+		};
+		43A64FE2201ED13800F33BD2 /* Baseball RecruitmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */,
+				43A64FE5201ED13800F33BD2 /* Info.plist */,
+			);
+			path = "Baseball RecruitmentTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43A64FCA201ED13700F33BD2 /* Baseball Recruitment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A64FE8201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball Recruitment" */;
+			buildPhases = (
+				43A64FC7201ED13700F33BD2 /* Sources */,
+				43A64FC8201ED13700F33BD2 /* Frameworks */,
+				43A64FC9201ED13700F33BD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Baseball Recruitment";
+			productName = "Baseball Recruitment";
+			productReference = 43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43A64FDE201ED13800F33BD2 /* Baseball RecruitmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A64FEB201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball RecruitmentTests" */;
+			buildPhases = (
+				43A64FDB201ED13800F33BD2 /* Sources */,
+				43A64FDC201ED13800F33BD2 /* Frameworks */,
+				43A64FDD201ED13800F33BD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43A64FE1201ED13800F33BD2 /* PBXTargetDependency */,
+			);
+			name = "Baseball RecruitmentTests";
+			productName = "Baseball RecruitmentTests";
+			productReference = 43A64FDF201ED13800F33BD2 /* Baseball RecruitmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43A64FC3201ED13700F33BD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Team Bard";
+				TargetAttributes = {
+					43A64FCA201ED13700F33BD2 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					43A64FDE201ED13800F33BD2 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43A64FCA201ED13700F33BD2;
+					};
+				};
+			};
+			buildConfigurationList = 43A64FC6201ED13700F33BD2 /* Build configuration list for PBXProject "Baseball Recruitment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43A64FC2201ED13700F33BD2;
+			productRefGroup = 43A64FCC201ED13700F33BD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43A64FCA201ED13700F33BD2 /* Baseball Recruitment */,
+				43A64FDE201ED13800F33BD2 /* Baseball RecruitmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43A64FC9201ED13700F33BD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A64FD9201ED13700F33BD2 /* LaunchScreen.storyboard in Resources */,
+				43A64FD6201ED13700F33BD2 /* Assets.xcassets in Resources */,
+				43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43A64FDD201ED13800F33BD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43A64FC7201ED13700F33BD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
+				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43A64FDB201ED13800F33BD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A64FE4201ED13800F33BD2 /* Baseball_RecruitmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43A64FE1201ED13800F33BD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43A64FCA201ED13700F33BD2 /* Baseball Recruitment */;
+			targetProxy = 43A64FE0201ED13800F33BD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43A64FD2201ED13700F33BD2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43A64FD3201ED13700F33BD2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43A64FD8201ED13700F33BD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43A64FE6201ED13800F33BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43A64FE7201ED13800F33BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43A64FE9201ED13800F33BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		43A64FEA201ED13800F33BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		43A64FEC201ED13800F33BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Baseball RecruitmentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-RecruitmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baseball Recruitment.app/Baseball Recruitment";
+			};
+			name = Debug;
+		};
+		43A64FED201ED13800F33BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Baseball RecruitmentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-RecruitmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baseball Recruitment.app/Baseball Recruitment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43A64FC6201ED13700F33BD2 /* Build configuration list for PBXProject "Baseball Recruitment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A64FE6201ED13800F33BD2 /* Debug */,
+				43A64FE7201ED13800F33BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43A64FE8201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball Recruitment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A64FE9201ED13800F33BD2 /* Debug */,
+				43A64FEA201ED13800F33BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43A64FEB201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball RecruitmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A64FEC201ED13800F33BD2 /* Debug */,
+				43A64FED201ED13800F33BD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43A64FC3201ED13700F33BD2 /* Project object */;
+}

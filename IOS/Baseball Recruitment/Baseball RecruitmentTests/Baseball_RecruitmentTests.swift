@@ -1,15 +1,15 @@
 //
-//  BaseballRecruitmentTests.swift
-//  BaseballRecruitmentTests
+//  Baseball_RecruitmentTests.swift
+//  Baseball RecruitmentTests
 //
-//  Created by Sergey Scott Nall  on 1/24/18.
+//  Created by Sergey Scott Nall  on 1/28/18.
 //  Copyright © 2018 Team Bard. All rights reserved.
 //
 
 import XCTest
-@testable import BaseballRecruitment
+@testable import Baseball_Recruitment
 
-class BaseballRecruitmentTests: XCTestCase {
+class Baseball_RecruitmentTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
