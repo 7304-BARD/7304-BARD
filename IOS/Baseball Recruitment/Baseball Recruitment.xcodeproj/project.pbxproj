@@ -13,6 +13,7 @@
 		43A64FD6201ED13700F33BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD5201ED13700F33BD2 /* Assets.xcassets */; };
 		43A64FD9201ED13700F33BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */; };
 		43A64FE4201ED13800F33BD2 /* Baseball_RecruitmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */; };
+		43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		43A64FDF201ED13800F33BD2 /* Baseball RecruitmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Baseball RecruitmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baseball_RecruitmentTests.swift; sourceTree = "<group>"; };
 		43A64FE5201ED13800F33BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				43A64FCE201ED13700F33BD2 /* AppDelegate.swift */,
 				43A64FD0201ED13700F33BD2 /* LoginViewController.swift */,
+				43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */,
 				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
 				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
+				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
