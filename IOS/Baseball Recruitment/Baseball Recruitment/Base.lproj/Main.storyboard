@@ -53,6 +53,9 @@
                                 <rect key="frame" x="16" y="178" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SgR-JD-XgY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-5d-i2j">
                                 <rect key="frame" x="197" y="178" width="162" height="30"/>
@@ -65,6 +68,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="h4c-8b-kCH" id="6TR-7Y-YGu"/>
                         <outlet property="usernameTextField" destination="ZQd-EC-fk3" id="ynH-J8-ebg"/>
+                        <segue destination="1g4-kD-y6A" kind="show" identifier="LoginPressed" id="PiB-C3-1tI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
