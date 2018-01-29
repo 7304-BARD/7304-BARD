@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.util.Pair;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,16 +15,6 @@ import org.jsoup.select.Selector;
 import baseballRecruitment.jd.RandomData;
 
 public class JPGS {
-
-  public static class Pair<K, V> {
-    public final K first;
-    public final V second;
-
-    public Pair(K k, V v) {
-      first = k;
-      second = v;
-    }
-  }
 
   public static class Player {
     String id;

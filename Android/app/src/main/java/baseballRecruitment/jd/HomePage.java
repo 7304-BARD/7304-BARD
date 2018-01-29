@@ -23,7 +23,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void top50(View view) {
-        startActivity(new Intent(this, Top50.class));
+        startActivity(new Intent(this, Top50_.class));
     }
 
     public void map(View view) {
