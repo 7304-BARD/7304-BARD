@@ -1,6 +1,7 @@
 package baseballRecruitment.jd.DataLayer;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,20 +17,20 @@ import baseballRecruitment.jd.RandomData;
 
 public class JPGS {
 
-  public static class Player {
+  public static class Player implements Serializable {
     public String id;
-    String name;
-    String year;
-    String pos;
-    String pos2;
-    String age;
-    String height;
-    String weight;
-    String bt;
-    String hs;
-    String town;
-    String team_summer;
-    String team_fall;
+    public String name;
+    public String year;
+    public String pos;
+    public String pos2;
+    public String age;
+    public String height;
+    public String weight;
+    public String bt;
+    public String hs;
+    public String town;
+    public String team_summer;
+    public String team_fall;
 
     public Player(String id) throws IOException {
       this.id  = id;
@@ -86,25 +87,47 @@ public class JPGS {
         addIf(details, "fall team", team_fall);
         return details;
     }
+
+    public String toString() {
+       return name + " " + pos + " " + year;
+    }
   }
 
   private static Document get_pg(String resource) throws IOException {
     return Jsoup.connect("http://www.perfectgame.org/" + resource).get();
   }
 
+  private static Document get_search(String query) throws IOException {
+    return get_pg("Search.aspx?search=" + query);
+  }
+
   private static Document get_player(String id) throws IOException {
     return get_pg("Players/Playerprofile.aspx?ID=" + id);
   }
 
+  private static Pair<String, String> getIdName(Element e) {
+    String href = e.attr("href");
+    return new Pair(href.substring(href.lastIndexOf('=') + 2), e.text());
+  }
+
+  private static Elements getPlayerKeyedTableRows(Document d) {
+    return Selector.select("tr:has(a[href~=Playerprofile.aspx])", d);
+  }
+
+  public static ArrayList<Player> searchPlayers(String query) throws IOException {
+    ArrayList<Player> al = new ArrayList<Player>();
+    for (Element r: getPlayerKeyedTableRows(get_search(query))) {
+      Pair<String, String> idName = getIdName(r.child(0).child(0));
+      al.add(new Player(idName.first, idName.second, r.child(1).text(), r.child(2).text()));
+    }
+    return al;
+  }
+
   public static ArrayList<Player> get_top50(String year) throws IOException {
-    Document t50 = get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year);
-    Elements rows = Selector.select("tr:has(a[href~=Playerprofile.aspx])", t50);
-    ArrayList<Player> al = new ArrayList<Player>(rows.size());
-    for (Element r : rows) {
-      Element nameId = r.child(1).child(0);
-      String href = nameId.attr("href");
-      String id = href.substring(href.lastIndexOf('=') + 1);
-      al.add(new Player(id, nameId.text(), r.child(2).text(), year));
+    ArrayList<Player> al = new ArrayList<Player>();
+    for (Element r : getPlayerKeyedTableRows(get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year))) {
+      Pair<String, String> idName = getIdName(r.child(1).child(0));
+      al.add(new Player(idName.first, idName.second, r.child(2).text(), year));
     }
     return al;
   }

@@ -32,7 +32,7 @@
         <activity android:name=".Planner" />
         <activity android:name=".NewMeeting" />
         <activity android:name=".Watchlist" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".SearchActivity_" />
     </application>
 
 </manifest>
