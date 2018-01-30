@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import baseballRecruitment.jd.DataLayer.Account.AccountsDatabase;
+import baseballRecruitment.jd.DataLayer.JPGS;
 
 public class Watchlist extends AppCompatActivity {
 
@@ -33,10 +33,19 @@ public class Watchlist extends AppCompatActivity {
         updateWL();
     }
 
+    @Override
+    protected void onActivityResult(int request, int result, Intent intent) {
+        if (request == 0 && result == RESULT_OK)
+            addPlayer((JPGS.Player) intent.getSerializableExtra(SearchActivity.extraKeyNewPlayer));
+    }
+
+    private void addPlayer(JPGS.Player newPlayer) {
+        db.userDao().insertPlayers(new Player(newPlayer.name, newPlayer.year, newPlayer.pos, true));
+        updateWL();
+    }
+
     public void newplayer(View view) {
-        startActivityForResult(new Intent(this, SearchActivity.class), 0);
-        //db.userDao().insertPlayers(RandomData.randomPlayer());
-        //updateWL();
+        startActivityForResult(new Intent(this, SearchActivity_.class), 0);
     }
 
     void updateWL() {

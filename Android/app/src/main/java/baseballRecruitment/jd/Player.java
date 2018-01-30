@@ -10,24 +10,14 @@ public class Player {
 
     boolean watchlist;
 
-    public Player(String name, int year, short positions, boolean watchlist) {
+    public Player(String name, String year, String position, boolean watchlist) {
         this.name = name;
         this.year = year;
-        this.positions = positions;
+        this.position = position;
         this.watchlist = watchlist;
     }
 
-    public int year;
+    public String year;
     public String name;
-    public short positions;
-
-    public static String [] positionStrings = {"P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF"};
-
-    public static String posToString(short positions) {
-        String rv = "";
-        for (int i = 0; i < 9; i++)
-            if ((positions & (1 << i)) != 0)
-                rv += "/" + positionStrings[i];
-        return rv.length() == 0 ? rv : rv.substring(1);
-    }
+    public String position;
 }

@@ -18,7 +18,7 @@ public abstract class RandomData {
     }
 
     public static Player randomPlayer() {
-        return new Player(randomName(), randomInt(2050, 2110), (short) randomInt(0, 1024), true);
+        return new Player(randomName(), "" + randomInt(2050, 2110), "" + randomInt(0, 1024), true);
     }
 
     public static ArrayList<Player> randomPlayers(int count) {
@@ -32,8 +32,8 @@ public abstract class RandomData {
     {
         HashMap<String, String> m = new HashMap<String, String>();
         m.put("name", p.name);
-        m.put("year", "" + p.year);
-        m.put("positions", Player.posToString(p.positions));
+        m.put("year", p.year);
+        m.put("positions", p.position);
         return m;
     }
 
