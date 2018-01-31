@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4359FACA201FE69A004D3C6A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4359FAC9201FE69A004D3C6A /* Alamofire.framework */; };
+		4359FACD202004C2004D3C6A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4359FACC202004C2004D3C6A /* AlamofireImage.framework */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4359FAC9201FE69A004D3C6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4359FACA201FE69A004D3C6A /* Alamofire.framework in Frameworks */,
+				4359FACD202004C2004D3C6A /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4359FAC8201FE69A004D3C6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4359FACC202004C2004D3C6A /* AlamofireImage.framework */,
+				4359FAC9201FE69A004D3C6A /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43A64FC2201ED13700F33BD2 = {
 			isa = PBXGroup;
 			children = (
 				43A64FCD201ED13700F33BD2 /* Baseball Recruitment */,
 				43A64FE2201ED13800F33BD2 /* Baseball RecruitmentTests */,
 				43A64FCC201ED13700F33BD2 /* Products */,
+				4359FAC8201FE69A004D3C6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +125,7 @@
 				43A64FC7201ED13700F33BD2 /* Sources */,
 				43A64FC8201ED13700F33BD2 /* Frameworks */,
 				43A64FC9201ED13700F33BD2 /* Resources */,
+				4359FACB201FE6F7004D3C6A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,6 +213,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4359FACB201FE6F7004D3C6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43A64FC7201ED13700F33BD2 /* Sources */ = {
@@ -345,6 +381,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
@@ -357,6 +397,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
@@ -412,6 +456,7 @@
 				43A64FEA201ED13800F33BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43A64FEB201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball RecruitmentTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +465,7 @@
 				43A64FED201ED13800F33BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
