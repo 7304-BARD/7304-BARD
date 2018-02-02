@@ -1,8 +1,11 @@
 package baseballRecruitment.jd;
 
 import android.app.ProgressDialog;
+import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
@@ -32,6 +35,7 @@ public class Top50 extends AppCompatActivity {
     ArrayList<JPGS.Player> players;
     ArrayList<ArrayList<HashMap<String, String>>> details;
     SimpleExpandableListAdapter adapter;
+    PlayersDatabase db;
 
     @ViewById
     ExpandableListView top_50_list;
@@ -42,6 +46,7 @@ public class Top50 extends AppCompatActivity {
     @AfterViews
     protected void load() {
         pdia = ProgressDialog.show(this, "Loading Top 50", "Please wait", true, false);
+        db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").build();
         fetch50();
     }
 
@@ -58,9 +63,26 @@ public class Top50 extends AppCompatActivity {
             details.add(new ArrayList(0));
         adapter = new SimpleExpandableListAdapter(this, pair.second, R.layout.watchlist_elv_group_view, player_keys, player_views, details, R.layout.watchlist_elv_child_view, stat_keys, stat_views);
         top_50_list.setAdapter(adapter);
+        top_50_list.setOnCreateContextMenuListener(new ExpandableListView.OnCreateContextMenuListener() {
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
+                if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
+                    contextMenu.add("Add to watchlist").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            addPlayerWL(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
+                            return false;
+                        }
+                    });
+            }
+        });
         pdia.dismiss();
         pbar.setVisibility(View.VISIBLE);
         loadDetails();
+    }
+
+    @Background
+    protected void addPlayerWL(JPGS.Player player) {
+        db.userDao().insertPlayers(new Player(player.name, player.year, player.pos, true));
     }
 
     @UiThread
