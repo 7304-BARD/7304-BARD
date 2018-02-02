@@ -142,6 +142,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOm-3i-OMR">
                                         <rect key="frame" x="0.0" y="38" width="343" height="30"/>
                                         <state key="normal" title="Top 50"/>
+                                        <connections>
+                                            <segue destination="OPR-b4-0ak" kind="show" id="GPe-Nu-eq4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFb-UY-imw">
                                         <rect key="frame" x="0.0" y="76" width="343" height="30"/>
@@ -166,6 +169,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lof-1K-M6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410" y="139"/>
+        </scene>
+        <!--Top 50-->
+        <scene sceneID="4Dl-Rr-VKo">
+            <objects>
+                <viewController title="Top 50" id="OPR-b4-0ak" customClass="Top50ViewController" customModule="Baseball_Recruitment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kpy-gv-WVI"/>
+                        <viewControllerLayoutGuide type="bottom" id="AsP-xe-0JB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x6a-sm-DKV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CoC-Nn-ci3">
+                                <rect key="frame" x="8" y="72" width="359" height="573"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a94-w8-b3l">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5Z0-An-v8K"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-8c-Lj8">
+                                        <rect key="frame" x="0.0" y="108" width="359" height="465"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a94-w8-b3l" firstAttribute="leading" secondItem="CoC-Nn-ci3" secondAttribute="leadingMargin" id="Jsx-hU-SO2"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="a94-w8-b3l" secondAttribute="trailing" id="Mik-zT-AuP"/>
+                                    <constraint firstItem="a94-w8-b3l" firstAttribute="leading" secondItem="NgK-8c-Lj8" secondAttribute="leading" id="PUv-Iz-u9A"/>
+                                    <constraint firstItem="NgK-8c-Lj8" firstAttribute="top" secondItem="a94-w8-b3l" secondAttribute="bottom" constant="8" id="gB4-oW-Uzy"/>
+                                    <constraint firstItem="a94-w8-b3l" firstAttribute="top" secondItem="CoC-Nn-ci3" secondAttribute="topMargin" id="waE-pj-uhU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="centerX" secondItem="x6a-sm-DKV" secondAttribute="centerX" id="1mk-y1-tiZ"/>
+                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="leading" secondItem="x6a-sm-DKV" secondAttribute="leadingMargin" constant="-8" id="20u-of-FWa"/>
+                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="top" secondItem="kpy-gv-WVI" secondAttribute="bottom" constant="8" symbolic="YES" id="WCm-2R-EDt"/>
+                            <constraint firstItem="AsP-xe-0JB" firstAttribute="top" secondItem="CoC-Nn-ci3" secondAttribute="bottom" constant="22" id="aOC-ju-zr0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="yearPicker" destination="a94-w8-b3l" id="4ZO-vP-Myi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2n-jf-mRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277.5999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

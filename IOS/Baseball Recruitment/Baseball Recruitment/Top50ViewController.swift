@@ -9,7 +9,11 @@
 import UIKit
 
 class Top50ViewController: UIViewController {
-
+    //MARK: Properties
+    @IBOutlet weak var yearPicker: UIPickerView!
+    
+    
+    //MARK: override functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
