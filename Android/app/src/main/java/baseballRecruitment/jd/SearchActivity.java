@@ -66,6 +66,6 @@ public class SearchActivity extends AppCompatActivity {
 
     @UiThread
     protected void setResults() {
-        searchResults.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, results));
+        searchResults.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, results));
     }
 }

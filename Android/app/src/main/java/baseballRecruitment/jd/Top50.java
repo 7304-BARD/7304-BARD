@@ -17,7 +17,6 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -58,7 +57,7 @@ public class Top50 extends AppCompatActivity {
     @UiThread
     protected void display50(Pair<ArrayList<JPGS.Player>, ArrayList<HashMap<String, String>>> pair) {
         players = pair.first;
-        details = new ArrayList(pair.first.size());
+        details = new ArrayList<>(pair.first.size());
         for (int i = 0; i < pair.first.size(); i++)
             details.add(new ArrayList(0));
         adapter = new SimpleExpandableListAdapter(this, pair.second, R.layout.watchlist_elv_group_view, player_keys, player_views, details, R.layout.watchlist_elv_child_view, stat_keys, stat_views);
@@ -93,11 +92,9 @@ public class Top50 extends AppCompatActivity {
 
     @Background
     protected void loadDetails() {
-        try {
-            players = JPGS.getPlayers(players);
-            for (int i = 0; i < players.size(); i++)
-                details.set(i, players.get(i).detailMap());
-        } catch (IOException e) {}
+        players = JPGS.getPlayers(players);
+        for (int i = 0; i < players.size(); i++)
+            details.set(i, players.get(i).detailMap());
         updateDetails();
     }
 }

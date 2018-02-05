@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
         }
 
         else {
-            EditText passwordView = (EditText) findViewById(R.id.password);
+            EditText passwordView = findViewById(R.id.password);
             passwordView.setError("Invalid email or password.");
         }
     }

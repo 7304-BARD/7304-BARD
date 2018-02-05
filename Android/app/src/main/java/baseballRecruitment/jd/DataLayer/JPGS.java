@@ -62,7 +62,7 @@ public class JPGS {
     }
 
     public HashMap<String, String> map() {
-        HashMap<String, String> m = new HashMap<String, String>(3);
+        HashMap<String, String> m = new HashMap<>(3);
         m.put("name", name);
         m.put("year", "" + year);
         m.put("positions", pos);
@@ -107,7 +107,7 @@ public class JPGS {
 
   private static Pair<String, String> getIdName(Element e) {
     String href = e.attr("href");
-    return new Pair(href.substring(href.lastIndexOf('=') + 1), e.text());
+    return new Pair<>(href.substring(href.lastIndexOf('=') + 1), e.text());
   }
 
   private static Elements getPlayerKeyedTableRows(Document d) {
@@ -115,7 +115,7 @@ public class JPGS {
   }
 
   public static ArrayList<Player> searchPlayers(String query) throws IOException {
-    ArrayList<Player> al = new ArrayList<Player>();
+    ArrayList<Player> al = new ArrayList<>();
     for (Element r: getPlayerKeyedTableRows(get_search(query))) {
       Pair<String, String> idName = getIdName(r.child(0).child(0));
       al.add(new Player(idName.first, idName.second, r.child(1).text(), r.child(2).text()));
@@ -124,7 +124,7 @@ public class JPGS {
   }
 
   public static ArrayList<Player> get_top50(String year) throws IOException {
-    ArrayList<Player> al = new ArrayList<Player>();
+    ArrayList<Player> al = new ArrayList<>();
     for (Element r : getPlayerKeyedTableRows(get_pg("Rankings/Players/NationalRankings.aspx?gyear=" + year))) {
       Pair<String, String> idName = getIdName(r.child(1).child(0));
       al.add(new Player(idName.first, idName.second, r.child(2).text(), year));
@@ -133,19 +133,19 @@ public class JPGS {
   }
 
   public static Pair<ArrayList<Player>, ArrayList<HashMap<String, String>>> get_top50_basic(String year) {
-    ArrayList<HashMap<String, String>> rv = new ArrayList(50);
-    ArrayList<Player> players = new ArrayList<Player>(0);
+    ArrayList<HashMap<String, String>> rv = new ArrayList<>(50);
+    ArrayList<Player> players = new ArrayList<>(0);
     try {
       players = get_top50(year);
       for (Player p : players)
         rv.add(p.map());
     } catch (IOException e) {}
-    return new Pair(players, rv);
+    return new Pair<>(players, rv);
   }
 
-  public static ArrayList<Player> getPlayers(final ArrayList<Player> ids) throws IOException {
-    ArrayList<Thread> ts = new ArrayList<Thread>(ids.size());
-    final ArrayList<Player> ps = new ArrayList<Player>(ids.size());
+  public static ArrayList<Player> getPlayers(final ArrayList<Player> ids) {
+    ArrayList<Thread> ts = new ArrayList<>(ids.size());
+    final ArrayList<Player> ps = new ArrayList<>(ids.size());
     for (int i = 0; i < ids.size(); i++) {
       final int e = i;
       ps.add(null);
