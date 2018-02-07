@@ -3,17 +3,21 @@ package baseballRecruitment.jd;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
+
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
+import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import baseballRecruitment.jd.DataLayer.JPGS;
-
+@EActivity(R.layout.activity_watchlist)
 public class Watchlist extends AppCompatActivity {
 
     static final String [] player_keys = {"name", "positions", "year"};
@@ -21,26 +25,27 @@ public class Watchlist extends AppCompatActivity {
     static final String [] stat_keys = {"label", "value"};
     static final int [] stat_views = {R.id.label, R.id.value};
 
+    @ViewById
     ExpandableListView watchlist;
+
     PlayersDatabase db;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_watchlist);
-        watchlist = findViewById(R.id.watchlist);
-        db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").allowMainThreadQueries().build();
+    @AfterViews
+    protected void load() {
+        db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").fallbackToDestructiveMigration().build();
         updateWL();
     }
 
     @Override
     protected void onActivityResult(int request, int result, Intent intent) {
         if (request == 0 && result == RESULT_OK)
-            addPlayer((JPGS.Player) intent.getSerializableExtra(SearchActivity.extraKeyNewPlayer));
+            addPlayer((Player) intent.getSerializableExtra(SearchActivity.extraKeyNewPlayer));
     }
 
-    private void addPlayer(JPGS.Player newPlayer) {
-        db.userDao().insertPlayers(new Player(newPlayer.name, newPlayer.year, newPlayer.pos, true));
+    @Background
+    protected void addPlayer(Player p) {
+        p.watchlist = true;
+        db.userDao().insertPlayers(p);
         updateWL();
     }
 
@@ -48,10 +53,14 @@ public class Watchlist extends AppCompatActivity {
         startActivityForResult(new Intent(this, SearchActivity_.class), 0);
     }
 
+    @Background
     void updateWL() {
         List<Player> players = db.userDao().getWatchlist();
-        ArrayList<HashMap<String, String>> players_mapped = RandomData.playerMaps(players);
-        ArrayList<ArrayList<HashMap<String, String>>> player_stats = RandomData.detailedPlayerMaps(players);
+        updateWL_report(Player.playerMaps(players), Player.detailedPlayerMaps(players));
+    }
+
+    @UiThread
+    void updateWL_report(ArrayList<HashMap<String, String>> players_mapped, ArrayList<ArrayList<HashMap<String, String>>> player_stats) {
         watchlist.setAdapter(new SimpleExpandableListAdapter(this, players_mapped, R.layout.watchlist_elv_group_view, player_keys, player_views, player_stats, R.layout.watchlist_elv_child_view, stat_keys, stat_views));
     }
 }

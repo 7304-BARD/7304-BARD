@@ -1,7 +1,6 @@
 package baseballRecruitment.jd.DataLayer;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,85 +12,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.jsoup.select.Selector;
 
-import baseballRecruitment.jd.RandomData;
+import baseballRecruitment.jd.Player;
 
 public class JPGS {
-
-  public static class Player implements Serializable {
-    public String id;
-    public String name;
-    public String year;
-    public String pos;
-    public String pos2;
-    public String age;
-    public String height;
-    public String weight;
-    public String bt;
-    public String hs;
-    public String town;
-    public String team_summer;
-    public String team_fall;
-
-    public Player(String id) throws IOException {
-      this.id  = id;
-      Document html  = get_player(id);
-      name = select("#ContentPlaceHolder1_Bio1_lblName", html);
-      year = select("#ContentPlaceHolder1_Bio1_lblGradYear", html);
-      pos = select("#ContentPlaceHolder1_Bio1_lblPrimaryPosition", html);
-      pos2 = select("#ContentPlaceHolder1_Bio1_lblOtherPositions", html);
-      age = select("#ContentPlaceHolder1_Bio1_lblAgeNow", html);
-      height = select("#ContentPlaceHolder1_Bio1_lblHeight", html);
-      weight = select("#ContentPlaceHolder1_Bio1_lblWeight", html);
-      bt = select("#ContentPlaceHolder1_Bio1_lblBatsThrows", html);
-      hs = select("#ContentPlaceHolder1_Bio1_lblHS", html);
-      town = select("#ContentPlaceHolder1_Bio1_lblHomeTown", html);
-      team_summer = select("#ContentPlaceHolder1_Bio1_lblSummerTeam", html);
-      team_fall = select("#ContentPlaceHolder1_Bio1_lblFallTeam", html);
-    }
-
-    public Player(String id, String name, String pos, String year) {
-      this.id = id;
-      this.name = name;
-      this.pos = pos;
-      this.year = year;
-    }
-
-    private String select(String sel, Document html) {
-      Element e = Selector.selectFirst(sel, html);
-      return e == null ? "<N/A>" : e.text();
-    }
-
-    public HashMap<String, String> map() {
-        HashMap<String, String> m = new HashMap<>(3);
-        m.put("name", name);
-        m.put("year", "" + year);
-        m.put("positions", pos);
-        return m;
-    }
-
-    private static void addIf(ArrayList<HashMap<String, String>> list, String k, String v) {
-        if (v != null)
-          list.add(RandomData.detailMap(k, v));
-    }
-
-    public ArrayList<HashMap<String, String>> detailMap() {
-        ArrayList<HashMap<String, String>> details = new ArrayList<>(9);
-        addIf(details, "other positions", pos2);
-        addIf(details, "age", age);
-        addIf(details, "height", height);
-        addIf(details, "weight", weight);
-        addIf(details, "bats/throws", bt);
-        addIf(details, "high school", hs);
-        addIf(details, "home town", town);
-        addIf(details, "summer team", team_summer);
-        addIf(details, "fall team", team_fall);
-        return details;
-    }
-
-    public String toString() {
-       return name + " " + pos + " " + year;
-    }
-  }
 
   private static Document get_pg(String resource) throws IOException {
     return Jsoup.connect("http://www.perfectgame.org/" + resource).get();
@@ -101,7 +24,7 @@ public class JPGS {
     return get_pg("Search.aspx?search=" + query);
   }
 
-  private static Document get_player(String id) throws IOException {
+  public static Document get_player(String id) throws IOException {
     return get_pg("Players/Playerprofile.aspx?ID=" + id);
   }
 
@@ -152,7 +75,7 @@ public class JPGS {
       Thread t = new Thread(new Runnable() {
         public void run() {
           try {
-            ps.set(e, new Player(ids.get(e).id));
+            ps.set(e, new Player(ids.get(e).pgid));
           }
           catch (IOException e) {}
         }

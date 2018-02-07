@@ -1,5 +1,6 @@
 package baseballRecruitment.jd;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,7 +30,7 @@ public class SearchActivity extends AppCompatActivity {
     @ViewById
     ListView searchResults;
 
-    ArrayList<JPGS.Player> results = new ArrayList<>(0);
+    ArrayList<Player> results = new ArrayList<>(0);
 
     @AfterViews
     protected void init() {
@@ -48,12 +49,29 @@ public class SearchActivity extends AppCompatActivity {
         searchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent();
-                intent.putExtra(extraKeyNewPlayer, results.get(i));
-                setResult(RESULT_OK, intent);
-                finish();
+                returnPlayer(ProgressDialog.show(SearchActivity.this, "Saving player.", "Please wait", true, false), i);
             }
         });
+    }
+
+    @Background
+    protected void returnPlayer(ProgressDialog pdia, int i)
+    {
+        Player p = results.get(i);
+        try {
+            p.populate();
+        } catch (IOException e) {}
+        Intent intent = new Intent();
+        intent.putExtra(extraKeyNewPlayer, p);
+        setResult(RESULT_OK, intent);
+        done(pdia);
+    }
+
+    @UiThread
+    protected void done(ProgressDialog pdia)
+    {
+        pdia.dismiss();
+        finish();
     }
 
     @Background

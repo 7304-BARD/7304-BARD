@@ -17,6 +17,7 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,7 +32,7 @@ public class Top50 extends AppCompatActivity {
     static final int [] stat_views = {R.id.label, R.id.value};
 
     ProgressDialog pdia;
-    ArrayList<JPGS.Player> players;
+    ArrayList<Player> players;
     ArrayList<ArrayList<HashMap<String, String>>> details;
     SimpleExpandableListAdapter adapter;
     PlayersDatabase db;
@@ -45,7 +46,7 @@ public class Top50 extends AppCompatActivity {
     @AfterViews
     protected void load() {
         pdia = ProgressDialog.show(this, "Loading Top 50", "Please wait", true, false);
-        db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").build();
+        db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").fallbackToDestructiveMigration().build();
         fetch50();
     }
 
@@ -55,7 +56,7 @@ public class Top50 extends AppCompatActivity {
     }
 
     @UiThread
-    protected void display50(Pair<ArrayList<JPGS.Player>, ArrayList<HashMap<String, String>>> pair) {
+    protected void display50(Pair<ArrayList<Player>, ArrayList<HashMap<String, String>>> pair) {
         players = pair.first;
         details = new ArrayList<>(pair.first.size());
         for (int i = 0; i < pair.first.size(); i++)
@@ -80,8 +81,13 @@ public class Top50 extends AppCompatActivity {
     }
 
     @Background
-    protected void addPlayerWL(JPGS.Player player) {
-        db.userDao().insertPlayers(new Player(player.name, player.year, player.pos, true));
+    protected void addPlayerWL(Player player) {
+        player.watchlist = true;
+        if (!player.populated)
+            try {
+                player.populate();
+            } catch (IOException e) {}
+        db.userDao().insertPlayers(player);
     }
 
     @UiThread
@@ -92,9 +98,11 @@ public class Top50 extends AppCompatActivity {
 
     @Background
     protected void loadDetails() {
-        players = JPGS.getPlayers(players);
         for (int i = 0; i < players.size(); i++)
+        try {
+            players.get(i).populate();
             details.set(i, players.get(i).detailMap());
+        } catch (IOException e) {}
         updateDetails();
     }
 }

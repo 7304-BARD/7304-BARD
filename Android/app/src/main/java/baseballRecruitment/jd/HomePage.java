@@ -15,7 +15,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void watchlist(View view) {
-        startActivity(new Intent(this, Watchlist.class));
+        Watchlist_.intent(this).start();
     }
 
     public void mycalendar(View view) {
