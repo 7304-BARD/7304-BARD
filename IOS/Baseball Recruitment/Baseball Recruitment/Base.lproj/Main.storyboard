@@ -182,44 +182,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CoC-Nn-ci3">
-                                <rect key="frame" x="8" y="72" width="359" height="573"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a94-w8-b3l">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="5Z0-An-v8K"/>
-                                        </constraints>
-                                    </pickerView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-8c-Lj8">
-                                        <rect key="frame" x="0.0" y="108" width="359" height="465"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="a94-w8-b3l" firstAttribute="leading" secondItem="CoC-Nn-ci3" secondAttribute="leadingMargin" id="Jsx-hU-SO2"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="a94-w8-b3l" secondAttribute="trailing" id="Mik-zT-AuP"/>
-                                    <constraint firstItem="a94-w8-b3l" firstAttribute="leading" secondItem="NgK-8c-Lj8" secondAttribute="leading" id="PUv-Iz-u9A"/>
-                                    <constraint firstItem="NgK-8c-Lj8" firstAttribute="top" secondItem="a94-w8-b3l" secondAttribute="bottom" constant="8" id="gB4-oW-Uzy"/>
-                                    <constraint firstItem="a94-w8-b3l" firstAttribute="top" secondItem="CoC-Nn-ci3" secondAttribute="topMargin" id="waE-pj-uhU"/>
-                                </constraints>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SeV-Ae-10g">
+                                <rect key="frame" x="16" y="89" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Top50ClassOf" id="5sa-cB-IZv">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sa-cB-IZv" id="ZMe-H8-ZQ6">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tdi-nh-pbN" kind="presentation" identifier="ClassOf" id="BBt-z4-OZi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OPR-b4-0ak" id="11J-7N-ZHF"/>
+                                    <outlet property="delegate" destination="OPR-b4-0ak" id="4p3-aV-Syu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="centerX" secondItem="x6a-sm-DKV" secondAttribute="centerX" id="1mk-y1-tiZ"/>
-                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="leading" secondItem="x6a-sm-DKV" secondAttribute="leadingMargin" constant="-8" id="20u-of-FWa"/>
-                            <constraint firstItem="CoC-Nn-ci3" firstAttribute="top" secondItem="kpy-gv-WVI" secondAttribute="bottom" constant="8" symbolic="YES" id="WCm-2R-EDt"/>
-                            <constraint firstItem="AsP-xe-0JB" firstAttribute="top" secondItem="CoC-Nn-ci3" secondAttribute="bottom" constant="22" id="aOC-ju-zr0"/>
-                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="yearPicker" destination="a94-w8-b3l" id="4ZO-vP-Myi"/>
+                        <outlet property="yearPicker" destination="SeV-Ae-10g" id="zC2-mh-hkA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2n-jf-mRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Class Of Table View Controller-->
+        <scene sceneID="CTp-g7-O2A">
+            <objects>
+                <tableViewController id="Tdi-nh-pbN" customClass="ClassOfTableViewController" customModule="Baseball_Recruitment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ol8-5I-lRR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassOfYear" id="2ZK-hA-oeA">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ZK-hA-oeA" id="DgP-wH-Sba">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Te3-92-bTg" kind="unwind" unwindAction="unwindToTop50WithSender:" id="8DY-M8-enp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tdi-nh-pbN" id="Odd-0P-FxH"/>
+                            <outlet property="delegate" destination="Tdi-nh-pbN" id="EGZ-OG-wK8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbL-Yz-YmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Te3-92-bTg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="139"/>
         </scene>
     </scenes>
 </document>

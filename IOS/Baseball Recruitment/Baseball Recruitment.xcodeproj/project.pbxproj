@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D766202BDD0C003B5516 /* Top50HighSchool.swift */; };
+		4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		433909BE2022C5500026A74B /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 		4359FAC9201FE69A004D3C6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		4389D766202BDD0C003B5516 /* Top50HighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HighSchool.swift; sourceTree = "<group>"; };
+		4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfTableViewController.swift; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -137,9 +141,11 @@
 				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */,
 				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
+				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
 				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
 				43A64FDA201ED13700F33BD2 /* Info.plist */,
+				4389D766202BDD0C003B5516 /* Top50HighSchool.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -280,7 +286,9 @@
 			files = (
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
+				4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */,
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
+				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
 				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +434,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
@@ -442,6 +451,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
