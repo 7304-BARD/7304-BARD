@@ -1,6 +1,7 @@
 package baseballRecruitment.jd;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
@@ -20,4 +21,7 @@ public interface PlayersDao {
 
     @Insert
     void insertPlayers(Player... players);
+
+    @Delete
+    void deletePlayers(Player... players);
 }

@@ -3,6 +3,8 @@ package baseballRecruitment.jd;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
@@ -30,9 +32,29 @@ public class Watchlist extends AppCompatActivity {
 
     PlayersDatabase db;
 
+    List<Player> players;
+
     @AfterViews
     protected void load() {
         db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").fallbackToDestructiveMigration().build();
+        watchlist.setOnCreateContextMenuListener(new ExpandableListView.OnCreateContextMenuListener() {
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
+                if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
+                    contextMenu.add("Remove").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            removePlayer(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
+                            return false;
+                        }
+                    });
+            }
+        });
+        updateWL();
+    }
+
+    @Background
+    protected void removePlayer(Player p) {
+        db.userDao().deletePlayers(p);
         updateWL();
     }
 
@@ -55,7 +77,7 @@ public class Watchlist extends AppCompatActivity {
 
     @Background
     void updateWL() {
-        List<Player> players = db.userDao().getWatchlist();
+        players = db.userDao().getWatchlist();
         updateWL_report(Player.playerMaps(players), Player.detailedPlayerMaps(players));
     }
 
