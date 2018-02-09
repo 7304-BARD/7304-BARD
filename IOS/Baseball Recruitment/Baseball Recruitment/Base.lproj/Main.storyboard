@@ -254,6 +254,7 @@
                                                     <outlet property="playerCommitment" destination="l0j-Xc-hiu" id="a4g-ka-Dv0"/>
                                                     <outlet property="playerName" destination="t8I-HM-l7v" id="AKi-HQ-1ml"/>
                                                     <outlet property="playerPosition" destination="8Su-Gr-U3O" id="iaq-0G-jsa"/>
+                                                    <segue destination="MPp-ML-1zG" kind="show" identifier="PlayerCard" id="duo-iT-TwX"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -283,6 +284,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2n-jf-mRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Player Card View Controller-->
+        <scene sceneID="wfw-iw-Rzz">
+            <objects>
+                <viewController id="MPp-ML-1zG" customClass="PlayerCardViewController" customModule="Baseball_Recruitment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sFO-Ux-179"/>
+                        <viewControllerLayoutGuide type="bottom" id="V6m-e8-B9C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KVJ-ls-cQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-Xt-aSB">
+                                <rect key="frame" x="125" y="72" width="125" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-hV-i3w">
+                                <rect key="frame" x="16" y="260" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HS Grad:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-R9-UlG">
+                                <rect key="frame" x="16" y="289" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez6-ou-wnv">
+                                <rect key="frame" x="16" y="318" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age at Draft:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIj-ME-adM">
+                                <rect key="frame" x="16" y="347" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageAtDraftLabel" destination="FIj-ME-adM" id="GkA-nV-hBa"/>
+                        <outlet property="currentAgeLabel" destination="ez6-ou-wnv" id="2aV-sg-Hx1"/>
+                        <outlet property="hsGradLabel" destination="A4r-R9-UlG" id="K4x-ot-Wom"/>
+                        <outlet property="nameLabel" destination="yWd-hV-i3w" id="uiN-Ve-kaz"/>
+                        <outlet property="playerImage" destination="e1f-Xt-aSB" id="yde-qk-aav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZX-KT-3Bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="-537.48125937031489"/>
         </scene>
         <!--Class Of Table View Controller-->
         <scene sceneID="CTp-g7-O2A">

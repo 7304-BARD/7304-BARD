@@ -134,7 +134,9 @@ class Top50HighSchool
             }
             
             let aNode1 = row.at_css("a[href*='Players/Playerprofile.aspx?ID=']")
-            let href = aNode1?["href"] ?? ""
+            let hrefRaw = aNode1?["href"] ?? ""
+            let href = hrefRaw.replacingOccurrences(of: "../", with: "")
+            
             let playerName = aNode1?.text ?? ""
             
             let tdNode = row.at_css("td:nth-child(3)")

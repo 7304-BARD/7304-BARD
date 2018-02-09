@@ -83,13 +83,30 @@ class Top50ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Navigation
 
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "PlayerCard" {
+            guard let viewController = segue.destination as? PlayerCardViewController
+                else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCell = sender as? Top50HsTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = playersTable.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let player = players[indexPath.row]
+            viewController.hrefPath = player.href
+        }
     }
-    */
+
     
     
     //MARK: Actions
