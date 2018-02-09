@@ -79,7 +79,7 @@ class Top50HighSchool
         let url = mainUrl + subUrl
         Alamofire.request(url).responseString{ response in
             guard response.result.isSuccess else {
-                print("Alamofire.request failed.")
+                print("Alamofire.request failed.\n\(String(describing: response.error))")
                 return
             }
             
@@ -114,12 +114,24 @@ class Top50HighSchool
             return players
         }
         
-        for i in 1...nRows {
+        for i in 1..<nRows {
             if i % 2 == 0 {
                 continue
             }
             
             let row = rows[i]
+            
+            let tableHeaderNodes = row.css("th")
+            if tableHeaderNodes.count > 0 {
+                // Skip the table row with table headers.
+                continue
+            }
+            
+            let multiPageNode = row.at_css("a[href*='Page$']")
+            if multiPageNode != nil {
+                // Skip the table row with page request information.
+                continue
+            }
             
             let aNode1 = row.at_css("a[href*='Players/Playerprofile.aspx?ID=']")
             let href = aNode1?["href"] ?? ""
@@ -138,6 +150,16 @@ class Top50HighSchool
         
         return players
     }
-
+    
+    //MARK: Utility Functions
+    func extractYear(yearString: String) -> Int? {
+        let words = yearString.components(separatedBy: " ")
+        guard words.count == 3 else {
+            return nil
+        }
+        
+        let year:Int? = Int(words[2])
+        return year
+    }
     
 }

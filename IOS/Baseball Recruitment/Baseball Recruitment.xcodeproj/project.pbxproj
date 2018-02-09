@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D766202BDD0C003B5516 /* Top50HighSchool.swift */; };
 		4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */; };
+		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		4389D766202BDD0C003B5516 /* Top50HighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HighSchool.swift; sourceTree = "<group>"; };
 		4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfTableViewController.swift; sourceTree = "<group>"; };
+		4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HsTableViewCell.swift; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
 				43A64FDA201ED13700F33BD2 /* Info.plist */,
 				4389D766202BDD0C003B5516 /* Top50HighSchool.swift */,
+				4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
 				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
 				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
+				4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

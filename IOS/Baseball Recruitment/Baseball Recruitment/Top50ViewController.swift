@@ -10,10 +10,12 @@ import UIKit
 
 class Top50ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: Properties
+    let scraper = Top50HighSchool()
     var selectedYear = "Select a class year"
+    var players = Array<Top50HighSchool.Player>()
     
     @IBOutlet weak var yearPicker: UITableView!
-    
+    @IBOutlet weak var playersTable: UITableView!
     
     //MARK: override functions
     override func viewDidLoad() {
@@ -30,6 +32,10 @@ class Top50ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: TableView functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView === playersTable {
+            return players.count
+        }
+        
         return 1
     }
     
@@ -38,15 +44,39 @@ class Top50ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "Top50ClassOf"
+        if tableView === yearPicker {
+            let cellIdentifier = "Top50ClassOf"
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            cell.textLabel?.text = selectedYear
+            
+            return cell
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = selectedYear
+        else if tableView === playersTable {
+            let cellIdentifier = "PlayersCell"
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? Top50HsTableViewCell else {
+                fatalError("Not a valid top 50 HS players cell.")
+            }
+            
+            let player = players[indexPath.row]
+            
+            cell.playerName.text = player.name
+            cell.playerPosition.text = player.position
+            cell.playerCommitment.text = player.commitment ?? ""
+            
+            return cell
+        }
         
-        return cell
+        fatalError("Unknown tableview.")
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if tableView === yearPicker {
+            return true
+        }
+        
         return true
     }
 
@@ -77,8 +107,19 @@ class Top50ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         selectedYear = sourceViewController.classOfYears[index.row]
         let index2 = yearPicker.indexPathsForSelectedRows!
         yearPicker.reloadRows(at: index2, with: .automatic)
+        
+        guard let year = scraper.extractYear(yearString: selectedYear) else {
+            return
+        }
+        
+        scraper.requestTopHighSchool(year: year) { year, players in            
+            let slice = players.prefix(50)
+            
+            self.players = Array<Top50HighSchool.Player>(slice)
+            
+            DispatchQueue.main.async() {
+                self.playersTable.reloadData()
+            }
+        }
     }
-    
-
-
 }
