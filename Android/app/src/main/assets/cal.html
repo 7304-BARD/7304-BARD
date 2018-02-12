@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel='stylesheet' href='./fullcalendar.min.css' />
+    <script src='./jquery.min.js'></script>
+    <script src='./moment.min.js'></script>
+    <script src='./fullcalendar.min.js'></script>
+    <script>
+      $(document).ready(function() {
+        $('#cal').fullCalendar({
+            height: 'parent',
+            header: {
+                left: 'title',
+                center: 'today prev,next',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: function(start, end, tz, cb) {
+                var eventsJson = AndroidEvents.events(start.valueOf(), end.valueOf());
+                var events = JSON.parse(eventsJson);
+                cb(events);
+            }
+        })
+      });
+      function refresh() {
+          $('#cal').fullCalendar('refetchEvents');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="draconis"></div>
+    <div id="cal"></div>
+  </body>
+</html>

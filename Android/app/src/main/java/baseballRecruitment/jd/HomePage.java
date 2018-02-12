@@ -19,7 +19,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void mycalendar(View view) {
-        startActivity(new Intent(this, MyCalendar.class));
+        MyCalendar_.intent(this).start();
     }
 
     public void top50(View view) {

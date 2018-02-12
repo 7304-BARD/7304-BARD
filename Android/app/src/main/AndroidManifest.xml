@@ -28,9 +28,9 @@
         <activity android:name=".Registration" />
         <activity android:name=".HomePage" />
         <activity android:name=".Top50_" />
-        <activity android:name=".MyCalendar" />
+        <activity android:name=".MyCalendar_" />
         <activity android:name=".Planner" />
-        <activity android:name=".NewMeeting" />
+        <activity android:name=".NewMeeting_" />
         <activity android:name=".Watchlist_" />
         <activity android:name=".SearchActivity_" />
     </application>

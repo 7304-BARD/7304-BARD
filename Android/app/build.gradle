@@ -36,6 +36,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.1.0-beta5'
     compile 'com.android.support:design:26.1.0'
     compile 'org.androidannotations:androidannotations-api:4.4.0'
+    compile 'com.google.code.gson:gson:2.8.2'
     compile 'org.jsoup:jsoup:1.11.2'
     testCompile 'junit:junit:4.12'
 }
