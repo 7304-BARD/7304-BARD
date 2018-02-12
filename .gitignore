@@ -50,3 +50,7 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+
+# Carthage
+Carthage/
+

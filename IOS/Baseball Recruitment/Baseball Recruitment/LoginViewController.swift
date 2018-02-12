@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import os.log
 
 class LoginViewController: UIViewController {
     //MARK: Properties
@@ -19,9 +18,7 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        os_log("Logging in (username,password)=(%@,%@)",
-            log: OSLog.default, type: .debug, username, password)
-        
+        print("Logging in (username,password)=(\(username),\(password)).")        
         performSegue(withIdentifier: "LoginPressed", sender: self)
     }
     

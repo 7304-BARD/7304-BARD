@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D766202BDD0C003B5516 /* Top50HighSchool.swift */; };
+		4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */; };
+		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
+		4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76C202D4F98003B5516 /* PlayerCard.swift */; };
+		4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D783202D73B0003B5516 /* PlayerCardViewController.swift */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -14,6 +19,13 @@
 		43A64FD9201ED13700F33BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */; };
 		43A64FE4201ED13800F33BD2 /* Baseball_RecruitmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */; };
 		43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */; };
+		43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD13AA2023E95700506619 /* Top50ViewController.swift */; };
+		43EB7C08202400A4008F5509 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C05202400A4008F5509 /* Alamofire.framework */; };
+		43EB7C09202400A4008F5509 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C05202400A4008F5509 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43EB7C0A202400A4008F5509 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C06202400A4008F5509 /* AlamofireImage.framework */; };
+		43EB7C0B202400A4008F5509 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C06202400A4008F5509 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43EB7C0C202400A4008F5509 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C07202400A4008F5509 /* Kanna.framework */; };
+		43EB7C0D202400A4008F5509 /* Kanna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43EB7C07202400A4008F5509 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +38,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		43EB7C0E202400A4008F5509 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43EB7C09202400A4008F5509 /* Alamofire.framework in Embed Frameworks */,
+				43EB7C0B202400A4008F5509 /* AlamofireImage.framework in Embed Frameworks */,
+				43EB7C0D202400A4008F5509 /* Kanna.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		433909BE2022C5500026A74B /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
+		4359FAC9201FE69A004D3C6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		4389D766202BDD0C003B5516 /* Top50HighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HighSchool.swift; sourceTree = "<group>"; };
+		4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfTableViewController.swift; sourceTree = "<group>"; };
+		4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HsTableViewCell.swift; sourceTree = "<group>"; };
+		4389D76C202D4F98003B5516 /* PlayerCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
+		4389D783202D73B0003B5516 /* PlayerCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardViewController.swift; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +74,13 @@
 		43A64FE3201ED13800F33BD2 /* Baseball_RecruitmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baseball_RecruitmentTests.swift; sourceTree = "<group>"; };
 		43A64FE5201ED13800F33BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		43BD13AA2023E95700506619 /* Top50ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50ViewController.swift; sourceTree = "<group>"; };
+		43EB7BFD2024006B008F5509 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		43EB7C0120240077008F5509 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		43EB7C042024007E008F5509 /* Kanna.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Kanna.framework.dSYM; path = Carthage/Build/iOS/Kanna.framework.dSYM; sourceTree = "<group>"; };
+		43EB7C05202400A4008F5509 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		43EB7C06202400A4008F5509 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		43EB7C07202400A4008F5509 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EB7C08202400A4008F5509 /* Alamofire.framework in Frameworks */,
+				43EB7C0A202400A4008F5509 /* AlamofireImage.framework in Frameworks */,
+				43EB7C0C202400A4008F5509 /* Kanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +104,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4359FAC8201FE69A004D3C6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				433909BE2022C5500026A74B /* Kanna.framework */,
+				4359FACC202004C2004D3C6A /* AlamofireImage.framework */,
+				4359FAC9201FE69A004D3C6A /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43A64FC2201ED13700F33BD2 = {
 			isa = PBXGroup;
 			children = (
+				43EB7C05202400A4008F5509 /* Alamofire.framework */,
+				43EB7C06202400A4008F5509 /* AlamofireImage.framework */,
+				43EB7C07202400A4008F5509 /* Kanna.framework */,
+				43EB7C042024007E008F5509 /* Kanna.framework.dSYM */,
+				43EB7C0120240077008F5509 /* AlamofireImage.framework */,
+				43EB7BFD2024006B008F5509 /* Alamofire.framework */,
 				43A64FCD201ED13700F33BD2 /* Baseball Recruitment */,
 				43A64FE2201ED13800F33BD2 /* Baseball RecruitmentTests */,
 				43A64FCC201ED13700F33BD2 /* Products */,
+				4359FAC8201FE69A004D3C6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +144,17 @@
 			children = (
 				43A64FCE201ED13700F33BD2 /* AppDelegate.swift */,
 				43A64FD0201ED13700F33BD2 /* LoginViewController.swift */,
+				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */,
 				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
+				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
 				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
 				43A64FDA201ED13700F33BD2 /* Info.plist */,
+				4389D766202BDD0C003B5516 /* Top50HighSchool.swift */,
+				4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */,
+				4389D783202D73B0003B5516 /* PlayerCardViewController.swift */,
+				4389D76C202D4F98003B5516 /* PlayerCard.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -109,6 +178,8 @@
 				43A64FC7201ED13700F33BD2 /* Sources */,
 				43A64FC8201ED13700F33BD2 /* Frameworks */,
 				43A64FC9201ED13700F33BD2 /* Resources */,
+				4359FACB201FE6F7004D3C6A /* ShellScript */,
+				43EB7C0E202400A4008F5509 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +268,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4359FACB201FE6F7004D3C6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				"",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43A64FC7201ED13700F33BD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -204,7 +295,13 @@
 			files = (
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
+				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,
+				4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */,
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
+				4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */,
+				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
+				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
+				4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +442,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
@@ -357,6 +459,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Baseball Recruitment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
@@ -412,6 +519,7 @@
 				43A64FEA201ED13800F33BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43A64FEB201ED13800F33BD2 /* Build configuration list for PBXNativeTarget "Baseball RecruitmentTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +528,7 @@
 				43A64FED201ED13800F33BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
