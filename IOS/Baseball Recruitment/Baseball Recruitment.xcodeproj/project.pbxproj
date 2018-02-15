@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		436EE1E7203232BE0048CE53 /* DbUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EE1E6203232BE0048CE53 /* DbUtil.swift */; };
 		4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D766202BDD0C003B5516 /* Top50HighSchool.swift */; };
 		4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */; };
 		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
@@ -58,6 +59,7 @@
 		433909BE2022C5500026A74B /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 		4359FAC9201FE69A004D3C6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		436EE1E6203232BE0048CE53 /* DbUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbUtil.swift; sourceTree = "<group>"; };
 		4389D766202BDD0C003B5516 /* Top50HighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HighSchool.swift; sourceTree = "<group>"; };
 		4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfTableViewController.swift; sourceTree = "<group>"; };
 		4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HsTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */,
 				4389D783202D73B0003B5516 /* PlayerCardViewController.swift */,
 				4389D76C202D4F98003B5516 /* PlayerCard.swift */,
+				436EE1E6203232BE0048CE53 /* DbUtil.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
+				436EE1E7203232BE0048CE53 /* DbUtil.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,
 				4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */,

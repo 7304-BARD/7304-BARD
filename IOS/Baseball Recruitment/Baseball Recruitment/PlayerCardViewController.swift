@@ -18,6 +18,14 @@ class PlayerCardViewController: UIViewController {
     @IBOutlet weak var hsGradLabel: UILabel!
     @IBOutlet weak var currentAgeLabel: UILabel!
     @IBOutlet weak var ageAtDraftLabel: UILabel!
+    @IBOutlet weak var positionsLabel: UILabel!
+    @IBOutlet weak var heightWeightLabel: UILabel!
+    @IBOutlet weak var batThrowLabel: UILabel!
+    @IBOutlet weak var highSchoolLabel: UILabel!
+    @IBOutlet weak var homeTownLabel: UILabel!
+    @IBOutlet weak var summerTeamLabel: UILabel!
+    @IBOutlet weak var fallTeamLabel: UILabel!
+    @IBOutlet weak var commitmentLabel: UILabel!
     
     //MARK: Override functions
     override func viewDidLoad() {
@@ -39,6 +47,24 @@ class PlayerCardViewController: UIViewController {
                 self.hsGradLabel.text = "HS Grad: \(self.playerCard.hsGrad)"
                 self.currentAgeLabel.text = "Current Age: \(self.playerCard.age)"
                 self.ageAtDraftLabel.text = "Age at Draft: \(self.playerCard.ageAtDraft)"
+                
+                var positions = "Position(s): \(self.playerCard.position)"
+                if !self.playerCard.positionOther.isEmpty {
+                    positions += " \(self.playerCard.positionOther)"
+                }
+                
+                self.positionsLabel.text = positions
+                
+                let height = self.playerCard.height
+                let weight = self.playerCard.weight
+                self.heightWeightLabel.text = "Height/Weight: \(height), \(weight)"
+                
+                self.batThrowLabel.text = "Bat/Throw: \(self.playerCard.battingAndThrowing)"
+                self.highSchoolLabel.text = "High School: \(self.playerCard.highSchool)"
+                self.homeTownLabel.text = "Home Town: \(self.playerCard.homeTown)"
+                self.summerTeamLabel.text = "Summer Team: \(self.playerCard.summerTeam)"
+                self.fallTeamLabel.text = "Fall Team: \(self.playerCard.fallTeam)"
+                self.commitmentLabel.text = "Commitment: \(self.playerCard.commitment)"
             }
         }
         

@@ -144,6 +144,12 @@ class PlayerCard {
         if let node = doc.at_css(selector) {
             self.fallTeam = node.text ?? ""
         }
+        
+        // Commitment
+        selector = "#ContentPlaceHolder1_Bio1_hl4yearCommit"
+        if let node = doc.at_css(selector) {
+            self.commitment = node.text ?? ""
+        }
     }
     
     func requestPlayerImage(url: String, completion: @escaping () -> ()) {
