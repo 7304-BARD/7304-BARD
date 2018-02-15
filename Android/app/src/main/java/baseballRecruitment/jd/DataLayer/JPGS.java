@@ -28,6 +28,10 @@ public class JPGS {
     return get_pg("Players/Playerprofile.aspx?ID=" + id);
   }
 
+  public static Document get_tournaments() throws IOException {
+    return get_pg("Schedule/Default.aspx?Type=Tournaments");
+  }
+
   private static Pair<String, String> getIdName(Element e) {
     String href = e.attr("href");
     return new Pair<>(href.substring(href.lastIndexOf('=') + 1), e.text());
