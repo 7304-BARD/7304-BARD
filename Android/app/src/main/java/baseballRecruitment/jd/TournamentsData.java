@@ -34,16 +34,38 @@ import baseballRecruitment.jd.DataLayer.JPGS;
         @Ignore
         boolean populate = false;
 
-        //public Tournament() {}
-
-        //public Tournament() throws IOException {
-           // populate();
-        //}
+        public TournamentsData() throws IOException {
+            populate();
+        }
 
         public void populate() throws IOException {
             Document html = JPGS.get_tournaments();
-            //title = select()
+            title = select("#ContentPlaceHolder1_repSchedule_h1EventName_0", html);
+            date = select("#ContentPlaceHolder1_repSchedule_h1EventDate_0", html);
+            location = select("#ContentPlacerHolder1_repSchedule_h1EventLocation_0", html);
+            populate = true;
         }
-    }
+
+        public TournamentsData(String title, String date, String location) {
+            this.title = title;
+            this.date = date;
+            this.location = location;
+            populate = false;
+        }
+
+        private String select(String sel, Document html) {
+            Element e = Selector.selectFirst(sel, html);
+            return e == null ? "<N/A>" : e.text();
+        }
+
+        public HashMap<String, String> map() {
+            HashMap<String, String> m = new HashMap<>(3);
+            m.put("title", title);
+            m.put("date", "" + date);
+            m.put("location", location);
+            return m;
+        }
+
+}
 
 
