@@ -10,7 +10,9 @@
         android:id="@+id/webcal"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-    />
+    >
+
+    </WebView>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/new_meeting"
         android:layout_height="wrap_content"
