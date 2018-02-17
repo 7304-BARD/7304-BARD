@@ -25,4 +25,8 @@ public class HomePage extends AppCompatActivity {
     public void map(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJv78fsWEE9YgR3Zqua8Olkw0&destination=Russ+Chandler+Stadium")));
     }
+
+    public void tournaments(View view) {
+        Tournaments.intent(this).start();
+    }
 }

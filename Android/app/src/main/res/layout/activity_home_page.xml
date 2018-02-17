@@ -97,6 +97,7 @@
         android:layout_height="46dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="monospace"
+        android:onClick="tournaments"
         android:text="Tournaments"
         android:textSize="18sp"
         android:textStyle="bold"
