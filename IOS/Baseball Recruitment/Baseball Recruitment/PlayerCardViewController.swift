@@ -43,6 +43,7 @@ class PlayerCardViewController: UIViewController {
                     }
                 }
                 
+                self.title = "\(self.playerCard.name)"
                 self.nameLabel.text = "Name: \(self.playerCard.name)"
                 self.hsGradLabel.text = "HS Grad: \(self.playerCard.hsGrad)"
                 self.currentAgeLabel.text = "Current Age: \(self.playerCard.age)"
@@ -50,7 +51,7 @@ class PlayerCardViewController: UIViewController {
                 
                 var positions = "Position(s): \(self.playerCard.position)"
                 if !self.playerCard.positionOther.isEmpty {
-                    positions += " \(self.playerCard.positionOther)"
+                    positions += ", \(self.playerCard.positionOther)"
                 }
                 
                 self.positionsLabel.text = positions

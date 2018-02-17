@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "4.6.0"
 github "Alamofire/AlamofireImage" "3.3.0"
+github "stephencelis/SQLite.swift" "0.11.4"
 github "tid-kijyun/Kanna" "2.2.1"
