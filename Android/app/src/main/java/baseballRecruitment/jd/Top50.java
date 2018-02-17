@@ -27,7 +27,7 @@ import baseballRecruitment.jd.DataLayer.JPGS;
 public class Top50 extends AppCompatActivity {
 
     static final String [] player_keys = {"name", "positions", "year"};
-    static final int [] player_views = {R.id.name, R.id.positions, R.id.year};
+    static final int [] player_views = {R.id.key, R.id.val2, R.id.val1};
     static final String [] stat_keys = {"label", "value"};
     static final int [] stat_views = {R.id.label, R.id.value};
 
