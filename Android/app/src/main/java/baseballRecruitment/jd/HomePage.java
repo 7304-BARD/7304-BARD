@@ -3,16 +3,12 @@ package baseballRecruitment.jd;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
-public class HomePage extends AppCompatActivity {
+import org.androidannotations.annotations.EActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
-    }
+@EActivity(R.layout.activity_home_page)
+public class HomePage extends AppCompatActivity {
 
     public void watchlist(View view) {
         Watchlist_.intent(this).start();
@@ -23,7 +19,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void top50(View view) {
-        startActivity(new Intent(this, Top50_.class));
+        Top50_.intent(this).start();
     }
 
     public void map(View view) {

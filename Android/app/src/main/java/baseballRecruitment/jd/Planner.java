@@ -1,13 +1,8 @@
 package baseballRecruitment.jd;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class Planner extends AppCompatActivity {
+import org.androidannotations.annotations.EActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planner);
-    }
-}
+@EActivity(R.layout.activity_planner)
+public class Planner extends AppCompatActivity {}

@@ -2,7 +2,6 @@ package baseballRecruitment.jd;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
