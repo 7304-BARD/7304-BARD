@@ -21,18 +21,12 @@ class WatchlistTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(loadPlayers),
+                                               name: NSNotification.Name(rawValue: "loadPlayers"),
+                                               object: nil)
         
-        do {
-            guard let players = try db?.getAllPlayers() else {
-                return
-            }
-            
-            self.players = players
-            self.tableView.reloadData()
-            
-        } catch {
-            print("db?.getAllPlayers() failed. Error: \(error)")
-        }
+        loadPlayers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +119,20 @@ class WatchlistTableViewController: UITableViewController {
             viewController.hrefPath = player.hrefPath
         }
     }
- 
+    
+    // MARK: Helper functions
+    @objc func loadPlayers() {
+        do {
+            guard let players = try db?.getAllPlayers() else {
+                return
+            }
+            
+            self.players = players
+            self.tableView.reloadData()
+            
+        } catch {
+            print("db?.getAllPlayers() failed. Error: \(error)")
+        }
+    }
 
 }

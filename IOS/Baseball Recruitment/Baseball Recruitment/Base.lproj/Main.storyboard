@@ -328,7 +328,7 @@
                         <barButtonItem key="backBarButtonItem" title="Watchlist" id="6Kw-LV-o9H"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H01-Ol-ra5">
                             <connections>
-                                <segue destination="zhN-ix-tuE" kind="show" id="XHv-BW-p6f"/>
+                                <segue destination="zhN-ix-tuE" kind="show" identifier="WatchlistToPlayerSearch" id="XHv-BW-p6f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -362,6 +362,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MPp-ML-1zG" kind="show" identifier="ToPlayerCardFromPlayerSearch" id="YiK-DO-gdX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -375,7 +378,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YaE-A9-gQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="-1222"/>
+            <point key="canvasLocation" x="2116" y="-1276"/>
         </scene>
         <!--Player Card View Controller-->
         <scene sceneID="wfw-iw-Rzz">
@@ -543,6 +546,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="duo-iT-TwX"/>
+        <segue reference="YiK-DO-gdX"/>
     </inferredMetricsTieBreakers>
 </document>

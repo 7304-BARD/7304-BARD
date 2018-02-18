@@ -111,6 +111,11 @@ class PlayerCardViewController: UIViewController {
             try db?.addPlayer(player: playerCard)
             self.watchlistButton.setTitle("Player Added to Watchlist", for: .disabled)
             self.watchlistButton.isEnabled = false
+            
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadPlayers"), object: nil)
+            }
+            
         }
             
         catch {

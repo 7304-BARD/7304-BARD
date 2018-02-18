@@ -49,7 +49,8 @@ class PlayerSearchTableViewController: UITableViewController {
         let name = player.name
         let position = player.position
         let year = player.hsGrad
-        let text = "\(name), \(position), \(year)"
+        let homeTown = player.homeTown
+        let text = "\(name), \(position), \(year), \(homeTown)"
         cell.textLabel?.text = text
 
         return cell
@@ -91,15 +92,32 @@ class PlayerSearchTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ToPlayerCardFromPlayerSearch" {
+            guard let viewController = segue.destination as? PlayerCardViewController
+                else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCell = sender as? UITableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let player = players[indexPath.row]
+            viewController.hrefPath = player.hrefPath
+        }
     }
-    */
+ 
 
 }
 
@@ -107,6 +125,17 @@ extension PlayerSearchTableViewController : UISearchBarDelegate
 {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
+        if searchText.isEmpty {
+            players.removeAll()
+            tableView.reloadData()
+            return
+        }
+        
+        // If only a space has been added to the search, then do nothing.
+        if searchText.suffix(1).trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return
+        }
+        
         playerSearch.requestSearch(search: searchText) { players in
             if players == nil {
                 self.players.removeAll()
