@@ -10,9 +10,6 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import baseballRecruitment.jd.DataLayer.JPGS;
 
 @EActivity(R.layout.activity_tournaments)

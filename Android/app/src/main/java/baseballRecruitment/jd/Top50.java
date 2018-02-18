@@ -55,18 +55,7 @@ public class Top50 extends AppCompatActivity {
         ELVMappable.Map map = ELVMappable.setup(this, Player.player_keys, players);
         details = map.detailMapped;
         adapter = ELVMappable.apply(top_50_list, map);
-        top_50_list.setOnCreateContextMenuListener(new ExpandableListView.OnCreateContextMenuListener() {
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-                final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
-                if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
-                    contextMenu.add("Add to watchlist").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                        public boolean onMenuItemClick(MenuItem menuItem) {
-                            addPlayerWL(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
-                            return false;
-                        }
-                    });
-            }
-        });
+        top_50_list.setOnCreateContextMenuListener(new CMListener());
         pdia.dismiss();
         pbar.setVisibility(View.VISIBLE);
         loadDetails();
@@ -96,5 +85,20 @@ public class Top50 extends AppCompatActivity {
             details.set(i, players.get(i).detailMap());
         } catch (IOException e) {}
         updateDetails();
+    }
+
+    private class CMListener implements ExpandableListView.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+        ExpandableListView.ExpandableListContextMenuInfo info;
+
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
+            if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
+                contextMenu.add("Add to watchlist").setOnMenuItemClickListener(this);
+        }
+
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            addPlayerWL(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
+            return false;
+        }
     }
 }
