@@ -12,6 +12,8 @@
 		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
 		4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76C202D4F98003B5516 /* PlayerCard.swift */; };
 		4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D783202D73B0003B5516 /* PlayerCardViewController.swift */; };
+		439713162039320000D4586E /* PlayerSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439713152039320000D4586E /* PlayerSearchTableViewController.swift */; };
+		439713182039358F00D4586E /* PlayerSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439713172039358F00D4586E /* PlayerSearch.swift */; };
 		439F642C20365CE400D32D7A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; };
 		439F642D20365CE400D32D7A /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		439F642F203678EB00D32D7A /* DatabaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F642E203678EB00D32D7A /* DatabaseUtility.swift */; };
@@ -69,6 +71,8 @@
 		4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HsTableViewCell.swift; sourceTree = "<group>"; };
 		4389D76C202D4F98003B5516 /* PlayerCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
 		4389D783202D73B0003B5516 /* PlayerCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardViewController.swift; sourceTree = "<group>"; };
+		439713152039320000D4586E /* PlayerSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchTableViewController.swift; sourceTree = "<group>"; };
+		439713172039358F00D4586E /* PlayerSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearch.swift; sourceTree = "<group>"; };
 		439F642B20365CE400D32D7A /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		439F642E203678EB00D32D7A /* DatabaseUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtility.swift; sourceTree = "<group>"; };
 		439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewController.swift; sourceTree = "<group>"; };
@@ -156,13 +160,13 @@
 			children = (
 				43A64FCE201ED13700F33BD2 /* AppDelegate.swift */,
 				43A64FD0201ED13700F33BD2 /* LoginViewController.swift */,
-				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */,
 				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
-				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
 				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
 				43A64FDA201ED13700F33BD2 /* Info.plist */,
+				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
+				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				4389D766202BDD0C003B5516 /* Top50HighSchool.swift */,
 				4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */,
 				4389D783202D73B0003B5516 /* PlayerCardViewController.swift */,
@@ -170,6 +174,8 @@
 				439F642E203678EB00D32D7A /* DatabaseUtility.swift */,
 				439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */,
 				439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */,
+				439713152039320000D4586E /* PlayerSearchTableViewController.swift */,
+				439713172039358F00D4586E /* PlayerSearch.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			files = (
 				439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */,
 				439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */,
+				439713162039320000D4586E /* PlayerSearchTableViewController.swift in Sources */,
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,
@@ -322,6 +329,7 @@
 				4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */,
 				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
 				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
+				439713182039358F00D4586E /* PlayerSearch.swift in Sources */,
 				4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
