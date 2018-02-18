@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 import org.jsoup.select.Selector;
 
 import baseballRecruitment.jd.Player;
+import baseballRecruitment.jd.TournamentsData;
 
 public class JPGS {
 
@@ -38,6 +39,30 @@ public class JPGS {
 
   private static Elements getPlayerKeyedTableRows(Document d) {
     return Selector.select("tr:has(a[href~=Playerprofile.aspx])", d);
+  }
+
+  private static Elements getEventBoxes(Document d) {
+    return Selector.select("div.EventBox", d);
+  }
+
+  private static TournamentsData getEventData(Element ebox) {
+    Element dateElem = Selector.selectFirst("div[style=\"font-weight:bold; float:left\"]", ebox);
+    String date = dateElem == null ? "ERROR" : dateElem.text();
+
+    Element titleLocElem = Selector.selectFirst("center", ebox);
+    Element titleElem = Selector.selectFirst("strong", titleLocElem);
+    String title = titleElem == null ? "ERROR" : titleElem.text();
+    String location = titleElem.textNodes().get(0).text();
+    return new TournamentsData(title, date, location);
+  }
+
+  public static ArrayList<TournamentsData> getTournamentsData() {
+    ArrayList<TournamentsData> tds = new ArrayList<>();
+    try {
+      for (Element e: getEventBoxes(get_tournaments()))
+        tds.add(getEventData(e));
+    } catch (IOException e) {}
+    return tds;
   }
 
   public static ArrayList<Player> searchPlayers(String query) throws IOException {
