@@ -12,6 +12,21 @@
     tools:context="baseballRecruitment.jd.Login"
     tools:ignore="NewApi">
 
+            <TextView
+                android:id="@+id/welcomeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Baseball Recruitment Application"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/email"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <EditText
                 android:id="@+id/email"
                 android:ems="10"
@@ -25,9 +40,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/password"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <EditText
                 android:id="@+id/password"
@@ -41,28 +54,40 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/email"
-                tools:layout_editor_absoluteY="70dp"
-                tools:layout_editor_absoluteX="8dp" />
+                app:layout_constraintTop_toBottomOf="@id/email" />
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/login"
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="124dp"
                 android:layout_height="46dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="monospace"
-                android:text="Enter"
+                android:text="Login"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
-                android:onClick="login"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/register"
+                app:layout_constraintTop_toBottomOf="@id/password" />
+
+            <Button
+                android:id="@+id/register"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@android:color/holo_blue_dark"
+                android:fontFamily="monospace"
+                android:text="Register"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password"
-                tools:layout_editor_absoluteX="192dp"
-                tools:layout_editor_absoluteY="132dp" />
+                app:layout_constraintTop_toBottomOf="@+id/login" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,9 +1,9 @@
 package baseballRecruitment.jd;
 
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.EditText;
 
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -19,11 +19,12 @@ public class Login extends AppCompatActivity {
     @ViewById
     EditText password;
 
-    public void login(View view) {
+    @Click
+    public void login() {
         final String emailString = email.getText().toString();
         final String passwordString = password.getText().toString();
 
-        ILoginManager loginManager = new MockLoginManager(view.getContext());
+        ILoginManager loginManager = new MockLoginManager(this);
         if (loginManager.checkCredentials(emailString, passwordString)) {
             HomePage_.intent(this).start();
             finish();
@@ -32,4 +33,10 @@ public class Login extends AppCompatActivity {
             password.setError("Invalid email or password.");
         }
     }
+
+    @Click
+    public void register() {
+        Registration_.intent(this).start();
+    }
+
 }
