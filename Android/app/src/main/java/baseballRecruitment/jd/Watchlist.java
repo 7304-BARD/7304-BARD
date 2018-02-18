@@ -29,18 +29,7 @@ public class Watchlist extends AppCompatActivity {
     @AfterViews
     protected void load() {
         db = Room.databaseBuilder(getApplicationContext(), PlayersDatabase.class, "players").fallbackToDestructiveMigration().build();
-        watchlist.setOnCreateContextMenuListener(new ExpandableListView.OnCreateContextMenuListener() {
-            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-                final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
-                if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
-                    contextMenu.add("Remove").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                        public boolean onMenuItemClick(MenuItem menuItem) {
-                            removePlayer(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
-                            return false;
-                        }
-                    });
-            }
-        });
+        watchlist.setOnCreateContextMenuListener(new CMListener());
         updateWL();
     }
 
@@ -76,5 +65,20 @@ public class Watchlist extends AppCompatActivity {
     @UiThread
     void updateWL_report(ELVMappable.Map elvm) {
         ELVMappable.apply(watchlist, elvm);
+    }
+
+    private class CMListener implements ExpandableListView.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+        ExpandableListView.ExpandableListContextMenuInfo info;
+
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;
+            if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_GROUP)
+                contextMenu.add("Remove").setOnMenuItemClickListener(this);
+        }
+
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            removePlayer(players.get(ExpandableListView.getPackedPositionGroup(info.packedPosition)));
+            return false;
+        }
     }
 }
