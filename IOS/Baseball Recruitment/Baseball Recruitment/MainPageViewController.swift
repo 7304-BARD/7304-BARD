@@ -21,6 +21,7 @@ class MainPageViewController: UIViewController {
                 print("Could not connect to database.")
                 return
             }
+
             try db!.createPlayerTable()
         } catch  {
             print("Could not create player table.")

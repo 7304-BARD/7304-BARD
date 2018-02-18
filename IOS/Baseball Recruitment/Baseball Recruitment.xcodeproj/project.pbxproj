@@ -15,6 +15,8 @@
 		439F642C20365CE400D32D7A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; };
 		439F642D20365CE400D32D7A /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		439F642F203678EB00D32D7A /* DatabaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F642E203678EB00D32D7A /* DatabaseUtility.swift */; };
+		439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */; };
+		439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		4389D783202D73B0003B5516 /* PlayerCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardViewController.swift; sourceTree = "<group>"; };
 		439F642B20365CE400D32D7A /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		439F642E203678EB00D32D7A /* DatabaseUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtility.swift; sourceTree = "<group>"; };
+		439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewController.swift; sourceTree = "<group>"; };
+		439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewCell.swift; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				4389D783202D73B0003B5516 /* PlayerCardViewController.swift */,
 				4389D76C202D4F98003B5516 /* PlayerCard.swift */,
 				439F642E203678EB00D32D7A /* DatabaseUtility.swift */,
+				439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */,
+				439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */,
+				439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */,
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,

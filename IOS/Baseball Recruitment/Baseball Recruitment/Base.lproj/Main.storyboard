@@ -138,6 +138,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qm-gE-Ygf">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <state key="normal" title="Watchlist"/>
+                                        <connections>
+                                            <segue destination="dbE-s0-BlD" kind="show" id="kTD-su-rpx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOm-3i-OMR">
                                         <rect key="frame" x="0.0" y="38" width="343" height="30"/>
@@ -285,6 +288,48 @@
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="138.98050974512745"/>
         </scene>
+        <!--Watchlist Table View Controller-->
+        <scene sceneID="scy-8T-nMg">
+            <objects>
+                <tableViewController id="dbE-s0-BlD" customClass="WatchlistTableViewController" customModule="Baseball_Recruitment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cB1-CN-ch4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WatchlistCell" textLabel="3Oi-WW-sBR" style="IBUITableViewCellStyleDefault" id="xU5-RB-E5q" customClass="WatchlistTableViewCell" customModule="Baseball_Recruitment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xU5-RB-E5q" id="Jfg-gb-udA">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Oi-WW-sBR">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MPp-ML-1zG" kind="show" identifier="ToPlayerCardFromWatchlist" id="1HB-uL-MGp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dbE-s0-BlD" id="hCW-Yl-jQW"/>
+                            <outlet property="delegate" destination="dbE-s0-BlD" id="gxI-W3-ICg"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="msh-Ub-FCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1278" y="-537"/>
+        </scene>
         <!--Player Card View Controller-->
         <scene sceneID="wfw-iw-Rzz">
             <objects>
@@ -298,7 +343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-Xt-aSB">
-                                <rect key="frame" x="125" y="72" width="125" height="180"/>
+                                <rect key="frame" x="16" y="72" width="125" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-hV-i3w">
@@ -385,6 +430,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fC6-yk-68f">
+                                <rect key="frame" x="149" y="72" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Player to Watchlist"/>
+                                <connections>
+                                    <action selector="pressWatchlistButton:" destination="MPp-ML-1zG" eventType="touchUpInside" id="mKC-zu-uND"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -402,6 +455,7 @@
                         <outlet property="playerImage" destination="e1f-Xt-aSB" id="yde-qk-aav"/>
                         <outlet property="positionsLabel" destination="CbA-Uj-WFs" id="zHu-9C-XBv"/>
                         <outlet property="summerTeamLabel" destination="YUU-6D-fpy" id="I5H-VG-Zxk"/>
+                        <outlet property="watchlistButton" destination="fC6-yk-68f" id="oxm-Dp-dhP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZX-KT-3Bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,4 +495,7 @@
             <point key="canvasLocation" x="2116" y="139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1HB-uL-MGp"/>
+    </inferredMetricsTieBreakers>
 </document>
