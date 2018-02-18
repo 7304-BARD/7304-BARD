@@ -3,7 +3,6 @@ package baseballRecruitment.jd;
 import android.app.ProgressDialog;
 import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,11 +25,6 @@ import baseballRecruitment.jd.DataLayer.JPGS;
 @EActivity(R.layout.activity_top50)
 public class Top50 extends AppCompatActivity {
 
-    static final String [] player_keys = {"name", "positions", "year"};
-    static final int [] player_views = {R.id.key, R.id.val2, R.id.val1};
-    static final String [] stat_keys = {"label", "value"};
-    static final int [] stat_views = {R.id.label, R.id.value};
-
     ProgressDialog pdia;
     ArrayList<Player> players;
     ArrayList<ArrayList<HashMap<String, String>>> details;
@@ -52,17 +46,15 @@ public class Top50 extends AppCompatActivity {
 
     @Background
     protected void fetch50() {
-        display50(JPGS.get_top50_basic("2016"));
+        players = JPGS.get_top50_basic("2016");
+        display50();
     }
 
     @UiThread
-    protected void display50(Pair<ArrayList<Player>, ArrayList<HashMap<String, String>>> pair) {
-        players = pair.first;
-        details = new ArrayList<>(pair.first.size());
-        for (int i = 0; i < pair.first.size(); i++)
-            details.add(new ArrayList(0));
-        adapter = new SimpleExpandableListAdapter(this, pair.second, R.layout.watchlist_elv_group_view, player_keys, player_views, details, R.layout.watchlist_elv_child_view, stat_keys, stat_views);
-        top_50_list.setAdapter(adapter);
+    protected void display50() {
+        ELVMappable.Map map = ELVMappable.setup(this, Player.player_keys, players);
+        details = map.detailMapped;
+        adapter = ELVMappable.apply(top_50_list, map);
         top_50_list.setOnCreateContextMenuListener(new ExpandableListView.OnCreateContextMenuListener() {
             public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                 final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) contextMenuInfo;

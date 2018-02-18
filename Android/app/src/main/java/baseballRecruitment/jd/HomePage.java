@@ -27,7 +27,6 @@ public class HomePage extends AppCompatActivity {
     }
 
    public void tournaments(View view) {
-       //Tournaments.start();
-       startActivityForResult(new Intent(this, Tournaments.class), 0);
+       Tournaments_.intent(this).start();
    }
 }

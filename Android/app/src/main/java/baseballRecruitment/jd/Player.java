@@ -13,12 +13,14 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import baseballRecruitment.jd.DataLayer.JPGS;
 
 @Entity
-  public class Player implements Serializable {
+  public class Player extends ELVMappable implements Serializable {
+
+      static final String [] player_keys = {"name", "positions", "year"};
+
     @PrimaryKey
     @NonNull
     public String pgid;
@@ -41,7 +43,9 @@ import baseballRecruitment.jd.DataLayer.JPGS;
     @Ignore
     boolean populated = false;
 
-    public Player() {}
+    public Player() {
+        populated = true;
+    }
 
     public Player(String id) throws IOException {
         this.pgid = id;
@@ -92,28 +96,26 @@ import baseballRecruitment.jd.DataLayer.JPGS;
     }
 
     public ArrayList<HashMap<String, String>> detailMap() {
-        ArrayList<HashMap<String, String>> details = new ArrayList<>(9);
-        addIf(details, "other positions", pos2);
-        addIf(details, "age", age);
-        addIf(details, "height", height);
-        addIf(details, "weight", weight);
-        addIf(details, "bats/throws", bt);
-        addIf(details, "high school", hs);
-        addIf(details, "home town", town);
-        addIf(details, "summer team", team_summer);
-        addIf(details, "fall team", team_fall);
-        return details;
+        if (populated) {
+          ArrayList<HashMap<String, String>> details = new ArrayList<>(9);
+          addIf(details, "other positions", pos2);
+          addIf(details, "age", age);
+          addIf(details, "height", height);
+          addIf(details, "weight", weight);
+          addIf(details, "bats/throws", bt);
+          addIf(details, "high school", hs);
+          addIf(details, "home town", town);
+          addIf(details, "summer team", team_summer);
+          addIf(details, "fall team", team_fall);
+          return details;
+        }
+        else {
+          return new ArrayList<>(0);
+        }
     }
 
     public String toString() {
        return name + " " + pos + " " + year;
-    }
-
-    public static ArrayList<HashMap<String, String>> playerMaps(List<Player> ps) {
-        ArrayList<HashMap<String, String>> pms = new ArrayList<>(ps.size());
-        for (int i = 0; i < ps.size(); i++)
-            pms.add(ps.get(i).map());
-        return pms;
     }
 
     public static HashMap<String, String> detailMap(String label, String value) {
@@ -121,13 +123,5 @@ import baseballRecruitment.jd.DataLayer.JPGS;
         map.put("label", label);
         map.put("value", value);
         return map;
-    }
-
-    public static ArrayList<ArrayList<HashMap<String, String>>> detailedPlayerMaps(List<Player> ps)
-    {
-        ArrayList<ArrayList<HashMap<String, String>>> list = new ArrayList<>(ps.size());
-        for (int i = 0; i < ps.size(); i++)
-            list.add(ps.get(i).detailMap());
-        return list;
     }
 }

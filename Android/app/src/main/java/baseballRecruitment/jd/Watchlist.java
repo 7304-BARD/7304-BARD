@@ -7,7 +7,6 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -15,17 +14,10 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @EActivity(R.layout.activity_watchlist)
 public class Watchlist extends AppCompatActivity {
-
-    static final String [] player_keys = {"name", "positions", "year"};
-    static final int [] player_views = {R.id.key, R.id.val2, R.id.val1};
-    static final String [] stat_keys = {"label", "value"};
-    static final int [] stat_views = {R.id.label, R.id.value};
 
     @ViewById
     ExpandableListView watchlist;
@@ -78,11 +70,11 @@ public class Watchlist extends AppCompatActivity {
     @Background
     void updateWL() {
         players = db.userDao().getWatchlist();
-        updateWL_report(Player.playerMaps(players), Player.detailedPlayerMaps(players));
+        updateWL_report(ELVMappable.setup(this, Player.player_keys, players));
     }
 
     @UiThread
-    void updateWL_report(ArrayList<HashMap<String, String>> players_mapped, ArrayList<ArrayList<HashMap<String, String>>> player_stats) {
-        watchlist.setAdapter(new SimpleExpandableListAdapter(this, players_mapped, R.layout.watchlist_elv_group_view, player_keys, player_views, player_stats, R.layout.watchlist_elv_child_view, stat_keys, stat_views));
+    void updateWL_report(ELVMappable.Map elvm) {
+        ELVMappable.apply(watchlist, elvm);
     }
 }

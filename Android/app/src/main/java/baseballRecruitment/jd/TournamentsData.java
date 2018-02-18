@@ -17,16 +17,16 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import baseballRecruitment.jd.DataLayer.JPGS;
 
 
 @Entity
-    public class TournamentsData implements Serializable {
+    public class TournamentsData extends ELVMappable implements Serializable {
+      static final String [] keys = {"title", "location", "date"};
+
     @PrimaryKey
     @NonNull
-
     public String title;
     public String date;
     public String location;
@@ -66,29 +66,12 @@ import baseballRecruitment.jd.DataLayer.JPGS;
         return m;
     }
 
-
-    private static void addIf(ArrayList<HashMap<String, String>> list, String k, String v) {
-        if (v != null)
-            list.add(detailMap(k, v));
-    }
-
     public ArrayList<HashMap<String, String>> detailMap() {
-        ArrayList<HashMap<String, String>> details = new ArrayList<>(3);
-        addIf(details, "event name", title);
-        addIf(details, "event date", date);
-        addIf(details, "event location", location);
-        return details;
+        return new ArrayList<>(0);
     }
 
     public String toString() {
         return title + " " + date + " " + location;
-    }
-
-    public static ArrayList<HashMap<String, String>> tournamentMaps(List<TournamentsData> ts) {
-        ArrayList<HashMap<String, String>> tms = new ArrayList<>(ts.size());
-        for (int i = 0; i < ts.size(); i++)
-            tms.add(ts.get(i).map());
-        return tms;
     }
 
     public static HashMap<String, String> detailMap(String label, String value) {
@@ -96,14 +79,6 @@ import baseballRecruitment.jd.DataLayer.JPGS;
         map.put("label", label);
         map.put("value", value);
         return map;
-    }
-
-    public static ArrayList<ArrayList<HashMap<String, String>>> detailedTournamentMaps(List<TournamentsData> ts)
-    {
-        ArrayList<ArrayList<HashMap<String, String>>> list = new ArrayList<>(ts.size());
-        for (int i = 0; i < ts.size(); i++)
-            list.add(ts.get(i).detailMap());
-        return list;
     }
 }
 

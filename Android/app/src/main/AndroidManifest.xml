@@ -33,7 +33,7 @@
         <activity android:name=".NewMeeting_" />
         <activity android:name=".Watchlist_" />
         <activity android:name=".SearchActivity_" />
-        <activity android:name=".Tournaments"></activity>
+        <activity android:name=".Tournaments_"></activity>
     </application>
 
 </manifest>
