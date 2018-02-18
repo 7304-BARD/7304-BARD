@@ -18,7 +18,7 @@ abstract class ELVMappable {
     public abstract ArrayList<HashMap<String, String>> detailMap();
 
     static SimpleExpandableListAdapter apply(ExpandableListView listView, Map map) {
-        SimpleExpandableListAdapter adapt = new SimpleExpandableListAdapter(map.cxt, map.mapped, R.layout.watchlist_elv_group_view, map.group_keys, group_views, map.detailMapped, R.layout.watchlist_elv_child_view, child_keys, child_views);
+        SimpleExpandableListAdapter adapt = new SimpleExpandableListAdapter(map.cxt, map.mapped, map.group_view, map.group_keys, group_views, map.detailMapped, R.layout.watchlist_elv_child_view, child_keys, child_views);
         listView.setAdapter(adapt);
         return adapt;
     }
@@ -32,6 +32,7 @@ abstract class ELVMappable {
         String [] group_keys;
         ArrayList<HashMap<String, String>> mapped;
         ArrayList<ArrayList<HashMap<String, String>>> detailMapped;
+        int group_view = R.layout.watchlist_elv_group_view;
 
         Map(Context c, String [] gk, List<? extends ELVMappable> mappable) {
             cxt = c;

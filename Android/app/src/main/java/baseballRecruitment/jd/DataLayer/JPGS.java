@@ -52,7 +52,7 @@ public class JPGS {
     Element titleLocElem = Selector.selectFirst("center", ebox);
     Element titleElem = Selector.selectFirst("strong", titleLocElem);
     String title = titleElem == null ? "ERROR" : titleElem.text();
-    String location = titleElem.textNodes().get(0).text();
+    String location = titleLocElem.textNodes().get(0).text();
     return new TournamentsData(title, date, location);
   }
 

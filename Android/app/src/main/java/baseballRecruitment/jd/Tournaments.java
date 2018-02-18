@@ -36,6 +36,7 @@ public class Tournaments extends AppCompatActivity {
 
     @UiThread
     protected void displayTL(ELVMappable.Map map) {
+        map.group_view = R.layout.tournaments_elv_group_view;
         ELVMappable.apply(tournamentsList, map);
         pdia.dismiss();
     }
