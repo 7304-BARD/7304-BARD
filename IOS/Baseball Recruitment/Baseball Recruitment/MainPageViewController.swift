@@ -10,10 +10,22 @@ import UIKit
 
 class MainPageViewController: UIViewController {
 
+    var db = DatabaseUtility()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        do {
+            guard db != nil else {
+                print("Could not connect to database.")
+                return
+            }
+
+            try db!.createPlayerTable()
+        } catch  {
+            print("Could not create player table.")
+        }
     }
 
     override func didReceiveMemoryWarning() {

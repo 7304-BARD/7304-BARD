@@ -12,6 +12,13 @@
 		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
 		4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76C202D4F98003B5516 /* PlayerCard.swift */; };
 		4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D783202D73B0003B5516 /* PlayerCardViewController.swift */; };
+		439713162039320000D4586E /* PlayerSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439713152039320000D4586E /* PlayerSearchTableViewController.swift */; };
+		439713182039358F00D4586E /* PlayerSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439713172039358F00D4586E /* PlayerSearch.swift */; };
+		439F642C20365CE400D32D7A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; };
+		439F642D20365CE400D32D7A /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 439F642B20365CE400D32D7A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		439F642F203678EB00D32D7A /* DatabaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F642E203678EB00D32D7A /* DatabaseUtility.swift */; };
+		439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */; };
+		439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */; };
 		43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FCE201ED13700F33BD2 /* AppDelegate.swift */; };
 		43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A64FD0201ED13700F33BD2 /* LoginViewController.swift */; };
 		43A64FD4201ED13700F33BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A64FD2201ED13700F33BD2 /* Main.storyboard */; };
@@ -47,6 +54,7 @@
 			files = (
 				43EB7C09202400A4008F5509 /* Alamofire.framework in Embed Frameworks */,
 				43EB7C0B202400A4008F5509 /* AlamofireImage.framework in Embed Frameworks */,
+				439F642D20365CE400D32D7A /* SQLite.framework in Embed Frameworks */,
 				43EB7C0D202400A4008F5509 /* Kanna.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -63,6 +71,12 @@
 		4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HsTableViewCell.swift; sourceTree = "<group>"; };
 		4389D76C202D4F98003B5516 /* PlayerCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
 		4389D783202D73B0003B5516 /* PlayerCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardViewController.swift; sourceTree = "<group>"; };
+		439713152039320000D4586E /* PlayerSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchTableViewController.swift; sourceTree = "<group>"; };
+		439713172039358F00D4586E /* PlayerSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearch.swift; sourceTree = "<group>"; };
+		439F642B20365CE400D32D7A /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		439F642E203678EB00D32D7A /* DatabaseUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtility.swift; sourceTree = "<group>"; };
+		439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewController.swift; sourceTree = "<group>"; };
+		439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewCell.swift; sourceTree = "<group>"; };
 		43A64FCB201ED13700F33BD2 /* Baseball Recruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Recruitment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A64FCE201ED13700F33BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A64FD0201ED13700F33BD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +104,7 @@
 			files = (
 				43EB7C08202400A4008F5509 /* Alamofire.framework in Frameworks */,
 				43EB7C0A202400A4008F5509 /* AlamofireImage.framework in Frameworks */,
+				439F642C20365CE400D32D7A /* SQLite.framework in Frameworks */,
 				43EB7C0C202400A4008F5509 /* Kanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +132,7 @@
 		43A64FC2201ED13700F33BD2 = {
 			isa = PBXGroup;
 			children = (
+				439F642B20365CE400D32D7A /* SQLite.framework */,
 				43EB7C05202400A4008F5509 /* Alamofire.framework */,
 				43EB7C06202400A4008F5509 /* AlamofireImage.framework */,
 				43EB7C07202400A4008F5509 /* Kanna.framework */,
@@ -144,17 +160,22 @@
 			children = (
 				43A64FCE201ED13700F33BD2 /* AppDelegate.swift */,
 				43A64FD0201ED13700F33BD2 /* LoginViewController.swift */,
-				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				43A64FEE201EE0F400F33BD2 /* MainPageViewController.swift */,
 				43A64FD2201ED13700F33BD2 /* Main.storyboard */,
-				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
 				43A64FD5201ED13700F33BD2 /* Assets.xcassets */,
 				43A64FD7201ED13700F33BD2 /* LaunchScreen.storyboard */,
 				43A64FDA201ED13700F33BD2 /* Info.plist */,
+				4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */,
+				43BD13AA2023E95700506619 /* Top50ViewController.swift */,
 				4389D766202BDD0C003B5516 /* Top50HighSchool.swift */,
 				4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */,
 				4389D783202D73B0003B5516 /* PlayerCardViewController.swift */,
 				4389D76C202D4F98003B5516 /* PlayerCard.swift */,
+				439F642E203678EB00D32D7A /* DatabaseUtility.swift */,
+				439F64302038FBA800D32D7A /* WatchlistTableViewController.swift */,
+				439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */,
+				439713152039320000D4586E /* PlayerSearchTableViewController.swift */,
+				439713172039358F00D4586E /* PlayerSearch.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -215,15 +236,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Team Bard";
 				TargetAttributes = {
 					43A64FCA201ED13700F33BD2 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					43A64FDE201ED13800F33BD2 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 43A64FCA201ED13700F33BD2;
 					};
@@ -279,6 +302,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Sqlite.framework",
 			);
 			outputPaths = (
 			);
@@ -293,14 +317,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */,
+				439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */,
+				439713162039320000D4586E /* PlayerSearchTableViewController.swift in Sources */,
 				43A64FD1201ED13700F33BD2 /* LoginViewController.swift in Sources */,
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,
 				4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */,
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
+				439F642F203678EB00D32D7A /* DatabaseUtility.swift in Sources */,
 				4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */,
 				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
 				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
+				439713182039358F00D4586E /* PlayerSearch.swift in Sources */,
 				4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +382,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -361,7 +392,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -390,6 +425,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -404,7 +440,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -412,7 +450,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -433,6 +475,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -451,7 +494,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -468,7 +512,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-Recruitment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -481,7 +526,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-RecruitmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baseball Recruitment.app/Baseball Recruitment";
 			};
 			name = Debug;
@@ -495,7 +541,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bard.Baseball-RecruitmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baseball Recruitment.app/Baseball Recruitment";
 			};
 			name = Release;

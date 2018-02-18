@@ -2,4 +2,5 @@
 github "Alamofire/Alamofire"
 github "Alamofire/AlamofireImage"
 github "tid-kijyun/Kanna"
+github "stephencelis/SQLite.swift"
 
