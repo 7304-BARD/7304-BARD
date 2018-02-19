@@ -10,57 +10,51 @@
         android:id="@+id/watchlist_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin_v"
+        android:layout_marginBottom="@dimen/title_margin_v"
         android:text="My Watchlist"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_fontsize"
         android:textStyle="bold"
         android:typeface="monospace"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toTopOf="@+id/watchlist_filter"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Spinner
         android:id="@+id/watchlist_filter"
-        android:layout_width="368dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/hp_button_margin_h"
+        android:layout_marginRight="@dimen/hp_button_margin_h"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/watchlist"
         app:layout_constraintTop_toBottomOf="@+id/watchlist_title"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ExpandableListView
         android:id="@+id/watchlist"
-        android:layout_width="363dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/hp_button_margin_h"
+        android:layout_marginRight="@dimen/hp_button_margin_h"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/watchlist_add_new"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/watchlist_filter" />
 
-    <Button
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/watchlist_add_new"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
-        android:text="Add New"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
         android:onClick="newplayer"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/watchlist" />
+        android:src="@drawable/ic_add_black_24dp"
+    />
 
 </android.support.constraint.ConstraintLayout>

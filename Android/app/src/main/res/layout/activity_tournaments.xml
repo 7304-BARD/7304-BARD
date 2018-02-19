@@ -9,26 +9,27 @@
     <TextView
         android:id="@+id/tournamentsTitle"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin_v"
+        android:layout_marginBottom="@dimen/title_margin_v"
         android:text="Tournaments"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_fontsize"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tournamentsList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ExpandableListView
         android:id="@+id/tournamentsList"
-        android:layout_width="395dp"
-        android:layout_height="490dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/hp_button_margin_h"
+        android:layout_marginRight="@dimen/hp_button_margin_h"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tournamentsTitle" />
 </android.support.constraint.ConstraintLayout>

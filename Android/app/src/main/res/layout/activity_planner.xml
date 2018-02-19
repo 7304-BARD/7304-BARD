@@ -10,59 +10,37 @@
         android:id="@+id/my_planner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin_v"
+        android:layout_marginBottom="@dimen/title_margin_v"
         android:text="My Planner"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_fontsize"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/planner_list"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/planner_list"
-        android:layout_width="280dp"
-        android:layout_height="314dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/hp_button_margin_h"
+        android:layout_marginRight="@dimen/hp_button_margin_h"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_planner"
-        app:layout_constraintVertical_bias="0.348" />
+        app:layout_constraintTop_toBottomOf="@+id/my_planner" />
 
-    <Button
-        android:id="@+id/planner_back"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_meeting"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
-        android:text="Back"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planner_list"
-        app:layout_constraintVertical_bias="0.509" />
-
-    <Button
-        android:id="@+id/planner_add_new"
-        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
-        android:text="Add New"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
+        android:layout_margin="@dimen/fab_margin"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
-        app:layout_constraintLeft_toRightOf="@+id/planner_back"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planner_list"
-        app:layout_constraintVertical_bias="0.509" />
+        android:src="@drawable/ic_add_black_24dp"
+    />
 
 </android.support.constraint.ConstraintLayout>

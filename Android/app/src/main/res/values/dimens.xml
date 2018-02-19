@@ -5,4 +5,9 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="hp_button_margin_v">20dp</dimen>
+    <dimen name="hp_button_margin_h">20dp</dimen>
+    <dimen name="hp_button_fontsize">18sp</dimen>
+    <dimen name="title_margin_v">10dp</dimen>
+    <dimen name="title_fontsize">16sp</dimen>
 </resources>

@@ -19,7 +19,7 @@
                 android:fontFamily="monospace"
                 android:text="Baseball Recruitment Application"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_blue_dark"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/email"
@@ -58,10 +58,10 @@
 
             <Button
                 android:id="@+id/login"
-                style="@android:style/Widget.Button.Inset"
+                style="@style/hp_button_style"
                 android:layout_width="124dp"
-                android:layout_height="46dp"
-                android:background="@android:color/holo_blue_dark"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
                 android:fontFamily="monospace"
                 android:text="Login"
                 android:textAlignment="center"
@@ -75,10 +75,10 @@
 
             <Button
                 android:id="@+id/register"
-                style="@android:style/Widget.Button.Inset"
+                style="@style/hp_button_style"
                 android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@android:color/holo_blue_dark"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
                 android:fontFamily="monospace"
                 android:text="Register"
                 android:textAlignment="center"

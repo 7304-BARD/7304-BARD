@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="New Meeting"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_fontsize"
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintRight_toRightOf="parent"
@@ -75,10 +75,10 @@
 
     <Button
         android:id="@+id/meeting_submit"
-        style="@android:style/Widget.Button.Inset"
+        style="@style/hp_button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/colorAccent"
         android:text="Submit"
         android:textSize="16sp"
         android:textStyle="bold"

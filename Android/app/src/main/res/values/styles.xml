@@ -16,5 +16,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="hp_button_style" parent="@android:style/Widget.Button.Inset" />
 
 </resources>
