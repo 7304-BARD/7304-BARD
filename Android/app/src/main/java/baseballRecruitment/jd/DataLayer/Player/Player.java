@@ -1,4 +1,4 @@
-package baseballRecruitment.jd;
+package baseballRecruitment.jd.DataLayer.Player;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
@@ -14,12 +14,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import baseballRecruitment.jd.DataLayer.JPGS;
+import baseballRecruitment.jd.DataLayer.ELVMappable;
+import baseballRecruitment.jd.NetworkLayer.JPGS;
 
 @Entity
   public class Player extends ELVMappable implements Serializable {
 
-      static final String [] player_keys = {"name", "positions", "year"};
+      public static final String [] player_keys = {"name", "positions", "year"};
 
     @PrimaryKey
     @NonNull
@@ -38,10 +39,10 @@ import baseballRecruitment.jd.DataLayer.JPGS;
     public String team_summer;
     public String team_fall;
 
-    boolean watchlist;
+    public boolean watchlist;
 
     @Ignore
-    boolean populated = false;
+    public boolean populated = false;
 
     public Player() {
         populated = true;

@@ -1,4 +1,4 @@
-package baseballRecruitment.jd.DataLayer;
+package baseballRecruitment.jd.DataLayer.Account;
 
 /**
  * Created by sergeyscottnall on 11/27/17.
@@ -6,9 +6,6 @@ package baseballRecruitment.jd.DataLayer;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
-
-import baseballRecruitment.jd.DataLayer.Account.Account;
-import baseballRecruitment.jd.DataLayer.Account.AccountsDatabase;
 
 public class MockLoginManager implements ILoginManager {
     public MockLoginManager(Context context) {

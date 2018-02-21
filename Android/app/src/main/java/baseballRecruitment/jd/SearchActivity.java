@@ -18,7 +18,8 @@ import org.androidannotations.annotations.ViewById;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import baseballRecruitment.jd.DataLayer.JPGS;
+import baseballRecruitment.jd.NetworkLayer.JPGS;
+import baseballRecruitment.jd.DataLayer.Player.Player;
 
 @EActivity(R.layout.activity_search)
 public class SearchActivity extends AppCompatActivity {

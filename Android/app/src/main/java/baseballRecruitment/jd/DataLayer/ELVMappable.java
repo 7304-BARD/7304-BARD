@@ -1,4 +1,4 @@
-package baseballRecruitment.jd;
+package baseballRecruitment.jd.DataLayer;
 
 import android.content.Context;
 import android.widget.ExpandableListView;
@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-abstract class ELVMappable {
+import baseballRecruitment.jd.R;
+
+public abstract class ELVMappable {
 
     private static final int [] group_views = {R.id.key, R.id.val2, R.id.val1};
     private static final int [] child_views = {R.id.label, R.id.value};
@@ -17,24 +19,24 @@ abstract class ELVMappable {
     public abstract HashMap<String, String> map();
     public abstract ArrayList<HashMap<String, String>> detailMap();
 
-    static SimpleExpandableListAdapter apply(ExpandableListView listView, Map map) {
+    public static SimpleExpandableListAdapter apply(ExpandableListView listView, Map map) {
         SimpleExpandableListAdapter adapt = new SimpleExpandableListAdapter(map.cxt, map.mapped, map.group_view, map.group_keys, group_views, map.detailMapped, R.layout.watchlist_elv_child_view, child_keys, child_views);
         listView.setAdapter(adapt);
         return adapt;
     }
 
-    static Map setup(Context c, String [] gk, List<? extends ELVMappable> mps) {
+    public static Map setup(Context c, String [] gk, List<? extends ELVMappable> mps) {
         return new Map(c, gk, mps);
     }
 
-    static class Map {
-        Context cxt;
-        String [] group_keys;
-        ArrayList<HashMap<String, String>> mapped;
-        ArrayList<ArrayList<HashMap<String, String>>> detailMapped;
-        int group_view = R.layout.watchlist_elv_group_view;
+    public static class Map {
+        public Context cxt;
+        public String [] group_keys;
+        public ArrayList<HashMap<String, String>> mapped;
+        public ArrayList<ArrayList<HashMap<String, String>>> detailMapped;
+        public int group_view = R.layout.watchlist_elv_group_view;
 
-        Map(Context c, String [] gk, List<? extends ELVMappable> mappable) {
+        public Map(Context c, String [] gk, List<? extends ELVMappable> mappable) {
             cxt = c;
             group_keys = gk;
             mapped = new ArrayList<>(mappable.size());

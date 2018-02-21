@@ -7,8 +7,8 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import baseballRecruitment.jd.DataLayer.ILoginManager;
-import baseballRecruitment.jd.DataLayer.MockLoginManager;
+import baseballRecruitment.jd.DataLayer.Account.ILoginManager;
+import baseballRecruitment.jd.DataLayer.Account.MockLoginManager;
 
 @EActivity(R.layout.activity_login)
 public class Login extends AppCompatActivity {

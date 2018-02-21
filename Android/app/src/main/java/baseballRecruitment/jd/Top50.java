@@ -20,7 +20,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import baseballRecruitment.jd.DataLayer.JPGS;
+import baseballRecruitment.jd.DataLayer.ELVMappable;
+import baseballRecruitment.jd.NetworkLayer.JPGS;
+import baseballRecruitment.jd.DataLayer.Player.Player;
+import baseballRecruitment.jd.DataLayer.Player.PlayersDatabase;
 
 @EActivity(R.layout.activity_top50)
 public class Top50 extends AppCompatActivity {

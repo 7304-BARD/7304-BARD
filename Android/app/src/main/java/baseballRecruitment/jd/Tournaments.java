@@ -10,7 +10,9 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
-import baseballRecruitment.jd.DataLayer.JPGS;
+import baseballRecruitment.jd.DataLayer.ELVMappable;
+import baseballRecruitment.jd.DataLayer.Tournament.Tournament;
+import baseballRecruitment.jd.NetworkLayer.JPGS;
 
 @EActivity(R.layout.activity_tournaments)
 public class Tournaments extends AppCompatActivity {
@@ -28,7 +30,7 @@ public class Tournaments extends AppCompatActivity {
 
     @Background
     protected void fetchTL() {
-        displayTL(ELVMappable.setup(this, TournamentsData.keys, JPGS.getTournamentsData()));
+        displayTL(ELVMappable.setup(this, Tournament.keys, JPGS.getTournamentsData()));
     }
 
     @UiThread

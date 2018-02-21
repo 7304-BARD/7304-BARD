@@ -16,6 +16,10 @@ import org.androidannotations.annotations.ViewById;
 
 import java.util.List;
 
+import baseballRecruitment.jd.DataLayer.ELVMappable;
+import baseballRecruitment.jd.DataLayer.Player.Player;
+import baseballRecruitment.jd.DataLayer.Player.PlayersDatabase;
+
 @EActivity(R.layout.activity_watchlist)
 public class Watchlist extends AppCompatActivity {
 

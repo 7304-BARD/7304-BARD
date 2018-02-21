@@ -1,4 +1,4 @@
-package baseballRecruitment.jd;
+package baseballRecruitment.jd.DataLayer.Player;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;

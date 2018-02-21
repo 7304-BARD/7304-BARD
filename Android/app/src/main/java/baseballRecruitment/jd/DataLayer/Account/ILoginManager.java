@@ -1,4 +1,4 @@
-package baseballRecruitment.jd.DataLayer;
+package baseballRecruitment.jd.DataLayer.Account;
 
 /**
  * Created by sergeyscottnall on 11/27/17.

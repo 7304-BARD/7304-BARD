@@ -1,4 +1,4 @@
-package baseballRecruitment.jd.DataLayer;
+package baseballRecruitment.jd.NetworkLayer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.jsoup.select.Selector;
 
-import baseballRecruitment.jd.Player;
-import baseballRecruitment.jd.TournamentsData;
+import baseballRecruitment.jd.DataLayer.Player.Player;
+import baseballRecruitment.jd.DataLayer.Tournament.Tournament;
 
 public class JPGS {
 
@@ -45,7 +45,7 @@ public class JPGS {
     return Selector.select("div.EventBox", d);
   }
 
-  private static TournamentsData getEventData(Element ebox) {
+  private static Tournament getEventData(Element ebox) {
     Element dateElem = Selector.selectFirst("div[style=\"font-weight:bold; float:left\"]", ebox);
     String date = dateElem == null ? "ERROR" : dateElem.text();
 
@@ -53,11 +53,11 @@ public class JPGS {
     Element titleElem = Selector.selectFirst("strong", titleLocElem);
     String title = titleElem == null ? "ERROR" : titleElem.text();
     String location = titleLocElem.textNodes().get(0).text();
-    return new TournamentsData(title, date, location);
+    return new Tournament(title, date, location);
   }
 
-  public static ArrayList<TournamentsData> getTournamentsData() {
-    ArrayList<TournamentsData> tds = new ArrayList<>();
+  public static ArrayList<Tournament> getTournamentsData() {
+    ArrayList<Tournament> tds = new ArrayList<>();
     try {
       for (Element e: getEventBoxes(get_tournaments()))
         tds.add(getEventData(e));
