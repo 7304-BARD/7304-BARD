@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4355790A2045E3B800F1F4D4 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435579092045E3B800F1F4D4 /* TournamentViewController.swift */; };
+		4355790C20462EC000F1F4D4 /* TournamentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4355790B20462EC000F1F4D4 /* TournamentList.swift */; };
+		4355790E2047234800F1F4D4 /* HelperUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4355790D2047234800F1F4D4 /* HelperUtilities.swift */; };
 		4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D766202BDD0C003B5516 /* Top50HighSchool.swift */; };
 		4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D768202C16E4003B5516 /* ClassOfTableViewController.swift */; };
 		4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389D76A202CF948003B5516 /* Top50HsTableViewCell.swift */; };
@@ -64,6 +67,9 @@
 
 /* Begin PBXFileReference section */
 		433909BE2022C5500026A74B /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
+		435579092045E3B800F1F4D4 /* TournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
+		4355790B20462EC000F1F4D4 /* TournamentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentList.swift; sourceTree = "<group>"; };
+		4355790D2047234800F1F4D4 /* HelperUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUtilities.swift; sourceTree = "<group>"; };
 		4359FAC9201FE69A004D3C6A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4359FACC202004C2004D3C6A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		4389D766202BDD0C003B5516 /* Top50HighSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top50HighSchool.swift; sourceTree = "<group>"; };
@@ -176,6 +182,9 @@
 				439F64322039047C00D32D7A /* WatchlistTableViewCell.swift */,
 				439713152039320000D4586E /* PlayerSearchTableViewController.swift */,
 				439713172039358F00D4586E /* PlayerSearch.swift */,
+				4355790B20462EC000F1F4D4 /* TournamentList.swift */,
+				435579092045E3B800F1F4D4 /* TournamentViewController.swift */,
+				4355790D2047234800F1F4D4 /* HelperUtilities.swift */,
 			);
 			path = "Baseball Recruitment";
 			sourceTree = "<group>";
@@ -317,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4355790A2045E3B800F1F4D4 /* TournamentViewController.swift in Sources */,
 				439F64312038FBA800D32D7A /* WatchlistTableViewController.swift in Sources */,
 				439F64332039047C00D32D7A /* WatchlistTableViewCell.swift in Sources */,
 				439713162039320000D4586E /* PlayerSearchTableViewController.swift in Sources */,
@@ -324,11 +334,13 @@
 				43A64FEF201EE0F400F33BD2 /* MainPageViewController.swift in Sources */,
 				4389D76D202D4F98003B5516 /* PlayerCard.swift in Sources */,
 				4389D767202BDD0C003B5516 /* Top50HighSchool.swift in Sources */,
+				4355790C20462EC000F1F4D4 /* TournamentList.swift in Sources */,
 				43A64FCF201ED13700F33BD2 /* AppDelegate.swift in Sources */,
 				439F642F203678EB00D32D7A /* DatabaseUtility.swift in Sources */,
 				4389D784202D73B0003B5516 /* PlayerCardViewController.swift in Sources */,
 				4389D769202C16E4003B5516 /* ClassOfTableViewController.swift in Sources */,
 				43BD13AB2023E95700506619 /* Top50ViewController.swift in Sources */,
+				4355790E2047234800F1F4D4 /* HelperUtilities.swift in Sources */,
 				439713182039358F00D4586E /* PlayerSearch.swift in Sources */,
 				4389D76B202CF948003B5516 /* Top50HsTableViewCell.swift in Sources */,
 			);
