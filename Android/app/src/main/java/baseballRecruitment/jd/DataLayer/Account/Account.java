@@ -11,15 +11,17 @@ public class Account implements Serializable {
     @PrimaryKey(autoGenerate=true)
     public int uid;
 
+    public String name;
     public String email;
     public String username;
     public String password;
     public String organization;
 
-    public Account(String email, String username, String password, String organization) {
+    public Account(String name, String email, String username, String password, String organization) {
       this.email = email;
       this.username = username;
       this.password = password;
       this.organization = organization;
+      this.name = name;
     }
 }
