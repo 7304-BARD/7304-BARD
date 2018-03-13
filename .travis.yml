@@ -8,7 +8,7 @@ android:
     - tools
     - platform-tools
     - tools
-    - build-tools-26.0.2
+    - build-tools-26.0.3
     - android-26
 
 script: "(cd Android && ./gradlew build)"
@@ -38,4 +38,4 @@ deploy:
     - "Android/app/build/reports/lint-results.html"
   skip_cleanup: true
   on:
-    repo: gtny152/7304-BARD
+    repo: 7304-BARD/7304-BARD
