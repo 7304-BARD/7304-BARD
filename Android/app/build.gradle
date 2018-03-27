@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.3"
     defaultConfig {
         applicationId "baseballRecruitment.jd"
         minSdkVersion 16
@@ -33,15 +32,15 @@ dependencies {
     implementation 'android.arch.persistence.room:runtime:1.0.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta5'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta6'
     implementation 'com.android.support:design:26.1.0'
     implementation 'org.androidannotations:androidannotations-api:4.4.0'
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'org.jsoup:jsoup:1.11.2'
     testImplementation 'junit:junit:4.12'
-    compile 'com.google.firebase:firebase-core:11.8.0'
-    compile 'com.google.firebase:firebase-auth:11.8.0'
-    compile 'com.google.firebase:firebase-database:11.8.0'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
 
 }
