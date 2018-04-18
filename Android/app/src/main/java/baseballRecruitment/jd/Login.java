@@ -1,42 +1,45 @@
 package baseballRecruitment.jd;
 
 import android.support.v7.app.AppCompatActivity;
-import android.widget.EditText;
 
-import org.androidannotations.annotations.Click;
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.OnActivityResult;
 
-import baseballRecruitment.jd.DataLayer.Account.ILoginManager;
-import baseballRecruitment.jd.DataLayer.Account.MockLoginManager;
+import java.util.Arrays;
 
 @EActivity(R.layout.activity_login)
 public class Login extends AppCompatActivity {
-
-    @ViewById
-    EditText email;
-
-    @ViewById
-    EditText password;
-
-    @Click
-    public void login() {
-        final String emailString = email.getText().toString();
-        final String passwordString = password.getText().toString();
-
-        ILoginManager loginManager = new MockLoginManager(this);
-        if (loginManager.checkCredentials(emailString, passwordString)) {
-            HomePage_.intent(this).start();
-            finish();
-        }
+    @AfterViews
+    protected void load() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            AuthUI.IdpConfig emailConfig = new AuthUI.IdpConfig.EmailBuilder()
+              .setRequireName(false).build();
+            startActivityForResult(AuthUI.getInstance()
+              .createSignInIntentBuilder()
+              .setAvailableProviders(Arrays.asList(emailConfig))
+              .build(), 0);
+          }
         else {
-            password.setError("Invalid email or password.");
+            homepage();
         }
     }
 
-    @Click
-    public void register() {
-        Registration_.intent(this).start();
+    private void homepage() {
+        HomePage_.intent(this).start();
+        finish();
     }
 
+    @OnActivityResult(0)
+    protected void onResult(int result) {
+        if (result == RESULT_OK)
+            homepage();
+        else
+            load();
+    }
 }
