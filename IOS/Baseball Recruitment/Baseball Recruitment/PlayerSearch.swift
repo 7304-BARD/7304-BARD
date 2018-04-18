@@ -30,7 +30,7 @@ class PlayerSearch
     }
     
     func scrapeSearch(html: String) -> [PlayerCard]? {
-        guard let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+        guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
             else {
                 print("Kana.HTML failed.")
                 return nil

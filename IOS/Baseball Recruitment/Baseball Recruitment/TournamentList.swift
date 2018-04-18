@@ -63,6 +63,9 @@ class TournamentList
     
     var tournaments = [Tournament]()
     
+    // Used to get the selected month.
+    var monthIndex = -1
+    
     // MARK Helper functions
     func getSelectedYear() -> String {
         let year = postParameters["ctl00$ContentPlaceHolder1$ddlYear"]
@@ -76,10 +79,14 @@ class TournamentList
     }
     
     func getSelectedMonth() -> String {
-        // XXX For now, it will just be the current month.
-        let month = DateTime.getDateString("MM")
-        let index = Int(month)! - 1
-        return months[index].text
+        if monthIndex == -1 {
+            let month = DateTime.getDateString("MM")
+            let index = Int(month)! - 1
+            monthIndex = index
+            return months[index].text
+        }
+        
+        return months[monthIndex].text
     }
     
     func getSelectedState() -> String {
@@ -119,7 +126,7 @@ class TournamentList
                 return
             }
             
-            guard let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+            guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
                 else {
                     print("Kana.HTML failed.")
                     return
@@ -253,5 +260,34 @@ class TournamentList
         }
         
         return option["value"]
+    }
+    
+    // MARK: POST
+    func postMonth(value: String, completion: @escaping () -> ()) {
+        // XXX Update month index
+        postParameters["__EVENTTARGET"] = value
+        
+        let url = "https://www.perfectgame.org/Schedule/Default.aspx?Type=Tournaments"
+        Alamofire.request(url, method: .post, parameters: postParameters).responseString { response in
+            guard response.result.isSuccess else {
+                print("Alamofire.request failed.\n\(String(describing: response.error))")
+                return
+            }
+            
+            guard let html = response.result.value else {
+                print("response.result.value is nil.")
+                return
+            }
+            
+            guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+                else {
+                    print("Kana.HTML failed.")
+                    return
+            }
+            
+            self.tournaments.removeAll()
+            self.scrapeTournaments(doc)
+            completion()
+        }
     }
 }

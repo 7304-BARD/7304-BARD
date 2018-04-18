@@ -53,7 +53,7 @@ class PlayerCard {
     }
     
     func scrapePlayerCard(html: String) {
-        guard let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+        guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
             else {
                 print("Kana.HTML failed.")
                 return

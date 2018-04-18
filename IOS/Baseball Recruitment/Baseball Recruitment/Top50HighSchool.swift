@@ -47,7 +47,7 @@ class Top50HighSchool
     func scrapeValidYears(html: String) -> [String] {
         var validYears = [String]()
         
-        guard let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+        guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
             else {
                 print("Kana.HTML failed.")
                 return validYears
@@ -93,7 +93,7 @@ class Top50HighSchool
     func scrapeTopHighSchool(year: Int, html: String) -> [Player] {
         var players = [Player]()
         
-        guard let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+        guard let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8)
             else {
                 print("Kana.HTML failed.")
                 return players
