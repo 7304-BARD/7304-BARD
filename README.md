@@ -56,3 +56,13 @@ Connect your iOS device to your Mac.
 `flutter build ios`
 
 `flutter install`
+
+# Troubleshooting
+If you have any problems, questions, comments, or suggestions, please [submit an issue](https://github.com/7304-BARD/7304-BARD/issues).
+
+# Known Bugs
+Occasionally, a strange logo will appear instead of the normal one.
+This is a rare behavior and it should not interfere with the functionality of the app.
+
+
+
